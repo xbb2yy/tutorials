@@ -1,6 +1,9 @@
 package com.xubing.polymorphism;
 
 public class Man extends Person{
+
+    public int age = 10;
+
     @Override
     public void eat() {
         System.out.println("man eat");
@@ -19,10 +22,11 @@ public class Man extends Person{
         Man m = new Man();
         p.eat();
         p.sleep();
+        System.out.println(p.age);
 
         m.eat();
         m.say();
         m.sleep();
-
+        System.out.println(m.age);
     }
 }

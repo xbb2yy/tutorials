@@ -2,6 +2,8 @@ package com.xubing.polymorphism;
 
 public class Person {
 
+    public int age = 0;
+
     private void say() {
         System.out.println("person");
     }
