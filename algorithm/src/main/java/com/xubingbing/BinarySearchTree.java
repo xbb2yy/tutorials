@@ -84,5 +84,16 @@ public class BinarySearchTree<E extends Comparable<E>> {
             tree.put(random.nextInt(200));
         }
         tree.forEach();
+
+        A a = new A();
+
+    }
+
+    private static class A {
+
+    }
+
+    class B {
+
     }
 }
