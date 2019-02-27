@@ -1,5 +1,6 @@
 package com.xubing.generic.泛型接口;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Random;
 
@@ -36,7 +37,7 @@ public class CoffeGenerator implements Generator<Coffee>, Iterable<Coffee> {
         }
 
         @Override
-        public Object next() {
+        public Coffee next() {
             count--;
             return CoffeGenerator.this.next();
         }
