@@ -1,6 +1,7 @@
 package com.xubing;
 
 import com.xubing.bean.Animal;
+import com.xubing.bean.Cat;
 import com.xubing.bean.Dog;
 import com.xubing.bean.Person;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -13,8 +14,7 @@ public class ClassPathXmlApplicationContextMain {
     public static void main(String[] args) {
 
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
-        Person animal = context.getBean(Person.class);
-        System.out.println(animal.getName());
-        context.registerShutdownHook();
+        Cat bean = context.getBean(Cat.class);
+        System.out.println(bean);
     }
 }
