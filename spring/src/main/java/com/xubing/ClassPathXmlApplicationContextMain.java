@@ -15,7 +15,6 @@ public class ClassPathXmlApplicationContextMain {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
         Person animal = context.getBean(Person.class);
         System.out.println(animal.getName());
-
         context.registerShutdownHook();
     }
 }

@@ -6,7 +6,7 @@ package algorithm;
  */
 public class 二叉树BST {
     public static void main(String[] args) {
-        BST<String, String> bst = new BST<>();
+        BST<String, String> bst = new BST();
 
         bst.put("hello", "world1");
         bst.put("hello1", "world1");
