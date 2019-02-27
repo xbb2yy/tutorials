@@ -18,6 +18,7 @@ class GenericBase<T> {
      T get() {
         return element;
     }
+    
 }
 
 class Derived<T> extends GenericBase<T>{}
