@@ -12,6 +12,7 @@ public class LostInformation {
         System.out.println(Arrays.toString(map.getClass().getTypeParameters()));
         System.out.println(Arrays.toString(quark.getClass().getTypeParameters()));
         System.out.println(Arrays.toString(p.getClass().getTypeParameters()));
+
     }
 }
 
