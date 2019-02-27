@@ -9,24 +9,20 @@ public class LinkedStack<T> {
     private static class Node<U> {
         U item;
         Node<U> next;
-        Node() {
-            this.item = null;
-            this.next = null;
-        }
+        Node() {}
         Node(U item, Node<U> next) {
             this.item = item;
             this.next = next;
         }
-
         boolean end() {
             return item == null && next == null;
         }
     }
 
-    private Node<T> top = new Node<>();
+    private Node<T> top = new Node<>();  // end sentinel
 
     public void push(T item) {
-        Node<T> node = new Node<>(item, top);
+        Node node = new Node<>(item, top);
         this.top = node;
     }
 

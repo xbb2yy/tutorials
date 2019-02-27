@@ -5,4 +5,5 @@ package com.xubing.generic.泛型接口;
  * @date 2018/8/10 11:39
  */
 public interface Generator<T> {
+    T next();
 }

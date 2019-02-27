@@ -7,8 +7,7 @@ import java.util.List;
 
 /**
  * @author xubing xbbjava@163.com
- * @className GenericTest
- * @description TODO
+ * @description
  * @date 2018/6/7 17:30
  */
 public class GenericTest {

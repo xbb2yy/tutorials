@@ -19,10 +19,9 @@
 
     <properties>
         <spring.version>
-            4.3.14.RELEASE
+            5.0.6.RELEASE
         </spring.version>
     </properties>
-
 
     <dependencies>
         <dependency>
