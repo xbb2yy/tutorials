@@ -1,13 +1,12 @@
 package com.xubing;
 
-import net.sf.cglib.proxy.Enhancer;
 import net.sf.cglib.proxy.MethodInterceptor;
 import net.sf.cglib.proxy.MethodProxy;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.lang.reflect.Proxy;
 
 /**
  * @author xubing xbbjava@163.com
@@ -15,21 +14,55 @@ import java.lang.reflect.Proxy;
  */
 public class Main {
     public static void main(String[] args) {
-
-        System.getProperties().put("sun.misc.ProxyGenerator.saveGeneratedFiles", "true");
-        Say o = (Say) Proxy.newProxyInstance(Say.class.getClassLoader(), new Class[]{Say.class}, new Handler(new Person()));
-        o.say("123");
-
-        Enhancer enhancer = new Enhancer();
-        enhancer.setSuperclass(Person.class);
-        CglibHandler handler = new CglibHandler(new Person());
-        enhancer.setCallback(handler);
-        Person person = (Person) enhancer.create();
-        person.say("test");
-
+        String str = "abcdefghijkl";
+        long startTime = System.currentTimeMillis();
+        for(int i = 0; i < 1000000; i++)
+            StringUtils.isNumeric(str);
+        long endTime = System.currentTimeMillis();
+        System.out.print("ByException: ");
+        System.out.println(endTime - startTime);
 
     }
+
+    public static boolean IsInt(String string) {
+        try {
+            Integer.parseInt(string);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+
+    public static boolean IsIntbByRegrex(String str) {
+        return str.matches("^-?\\d+$");
+    }
+
+    public static boolean IsIntByChar(String str)
+    {
+        if (str == null) {
+            return false;
+        }
+        int length = str.length();
+        if (length == 0) {
+            return false;
+        }
+        int i = 0;
+        if (str.charAt(0) == '-') {
+            if (length == 1) {
+                return false;
+            }
+            i = 1;
+        }
+        for (; i < length; i++) {
+            char c = str.charAt(i);
+            if (c <= '/' || c >= ':') {
+                return false;
+            }
+        }
+        return true;
+    }
 }
+
 
 interface Say {
     String say(String string);
