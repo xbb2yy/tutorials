@@ -7,6 +7,9 @@ import org.apache.commons.lang3.StringUtils;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.temporal.ChronoUnit;
 
 /**
  * @author xubing xbbjava@163.com
@@ -14,14 +17,7 @@ import java.lang.reflect.Method;
  */
 public class Main {
     public static void main(String[] args) {
-        String str = "abcdefghijkl";
-        long startTime = System.currentTimeMillis();
-        for(int i = 0; i < 1000000; i++)
-            StringUtils.isNumeric(str);
-        long endTime = System.currentTimeMillis();
-        System.out.print("ByException: ");
-        System.out.println(endTime - startTime);
-
+        System.out.println(System.getProperty("file.encoding"));
     }
 
     public static boolean IsInt(String string) {
