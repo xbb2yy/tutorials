@@ -2,6 +2,7 @@ package JavaConcurrencyInPractice.c5;
 
 import java.util.List;
 import java.util.Vector;
+import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
 
 public class CompositeVector {
@@ -31,6 +32,16 @@ public class CompositeVector {
     public static void main(String[] args) {
         CompositeVector compositeVector = new CompositeVector();
         new Thread(() -> compositeVector.getLast()).start();
-        new Thread(() -> compositeVector.removeLast()).start();
+       // new Thread(() -> compositeVector.removeLast()).start();
+
+        LinkedBlockingQueue<Object> queue = new LinkedBlockingQueue<>();
+        while (true) {
+            try {
+                queue.put(new String("QRWEWQRWQRWQERWREWR"));
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
     }
 }
