@@ -3,6 +3,8 @@ package com.xubing.regrex;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -101,6 +103,56 @@ public class RegrexTest {
         Assert.assertFalse(pattern.matcher(phone4).find());
         Assert.assertFalse(pattern.matcher(phone5).find());
         Assert.assertFalse(pattern.matcher(phone6).find());
+    }
+
+    @Test
+    public void emailTest() {
+        List<String> emails = new ArrayList();
+        emails.add("user@domain.com");
+        emails.add("user@domain.co.in");
+        emails.add("user1@domain.com");
+        emails.add("user.name@domain.com");
+        emails.add("user#@domain.co.in");
+        emails.add("user@domaincom");
+
+
+        emails.add("user#domain.com");
+        emails.add("@yahoo.com");
+
+        String regex = "^(.+)@(.+)$";
+
+        Pattern pattern = Pattern.compile(regex);
+
+        for(String email : emails){
+            Matcher matcher = pattern.matcher(email);
+            System.out.println(email +" : "+ matcher.matches());
+        }
+    }
+
+    @Test
+    public void testEmail() {
+        List<String> emails = new ArrayList();
+        emails.add("user@domain.com");
+        emails.add("user@domain.co.in");
+        emails.add("user.name@domain.com");
+        emails.add("user_name@domain.com");
+        emails.add("username@yahoo.corporate.in");
+
+//Invalid emails
+        emails.add(".username@yahoo.com");
+        emails.add("username@yahoo.com.");
+        emails.add("username@yahoo..com");
+        emails.add("username@yahoo.c");
+        emails.add("username@yahoo.corporate");
+
+        String regex = "^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$";
+
+        Pattern pattern = Pattern.compile(regex);
+
+        for(String email : emails){
+            Matcher matcher = pattern.matcher(email);
+            System.out.println(email +" : "+ matcher.matches());
+        }
     }
 
 
