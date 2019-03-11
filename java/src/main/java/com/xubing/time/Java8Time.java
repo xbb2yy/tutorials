@@ -3,10 +3,7 @@ package com.xubing.time;
 import com.xubing.exception.TryCatchFinally;
 import org.junit.Test;
 
-import java.time.DayOfWeek;
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.Year;
+import java.time.*;
 import java.time.temporal.ChronoUnit;
 import java.util.concurrent.*;
 
@@ -53,6 +50,11 @@ public class Java8Time {
         for (String c : split) {
             System.out.println(c);
         }
+    }
+
+    @Test
+    public void test4() {
+        OffsetDateTime offsetDateTime = OffsetDateTime.now();
     }
 
     public static void main(String[] args) {

@@ -23,6 +23,6 @@ public class SubmitUtil {
     }
 
     public static void main(String[] args) throws Exception {
-        submitLink("https://www.166157.com/category/spring5/");
+        submitLink("https://www.166157.com/java8/java-8-%E6%97%B6%E9%97%B4%E5%92%8C%E6%97%A5%E6%9C%9Fapi-%E6%A1%88%E4%BE%8B/");
     }
 }
