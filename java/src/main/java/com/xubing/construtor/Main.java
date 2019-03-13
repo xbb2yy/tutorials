@@ -10,7 +10,6 @@ public class Main {
         p.say("je;;p");
         p.run();
         String s = p.hello();
-
         System.out.println(s);
     }
 }
