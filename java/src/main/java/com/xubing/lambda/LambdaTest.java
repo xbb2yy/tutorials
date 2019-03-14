@@ -2,13 +2,13 @@ package com.xubing.lambda;
 
 import org.junit.Test;
 
+import java.io.File;
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.stream.Stream;
 
 /**
  * @author xubing xbbjava@163.com
- * @className LambdaTest
  * @description lambda 学习
  * @date 2018/5/7 16:01
  */
@@ -118,5 +118,11 @@ public class LambdaTest {
         map.put(1, 2);
         map.put(4, 4);
         map.forEach(Math::add);
+    }
+
+    @Test
+    public void test1() {
+        File[] files = new File("c://").listFiles(File::isDirectory);
+        Stream.of(files).forEach(f -> System.out.println(f.getName()));
     }
 }
