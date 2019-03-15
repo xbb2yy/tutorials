@@ -23,6 +23,6 @@ public class SubmitUtil {
     }
 
     public static void main(String[] args) throws Exception {
-        submitLink("https://www.166157.com/java8/java-8-stream-skip/");
+        submitLink("https://www.166157.com/java/java%E4%B8%AD%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AAstring%E6%98%AF%E4%B8%8D%E6%98%AF%E4%BB%A3%E8%A1%A8%E4%B8%80%E4%B8%AA%E6%95%B0%E5%AD%97%E7%9A%84%E6%9C%80%E4%BD%B3%E6%96%B9%E5%BC%8F/");
     }
 }

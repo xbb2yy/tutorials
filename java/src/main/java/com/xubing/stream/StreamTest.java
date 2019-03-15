@@ -1,15 +1,19 @@
 package com.xubing.stream;
 
+import com.sun.media.jfxmedia.logging.Logger;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.LongStream;
 import java.util.stream.Stream;
+
+import static java.util.stream.Collectors.*;
 
 /**
  * @author xubing xbbjava@163.com
- * @className StreamTest
  * @description java8 stream 学习
  * @date 2018/5/8 15:24
  */
@@ -17,6 +21,43 @@ public class StreamTest {
 
     private Map<String, String> map = new HashMap<>();
     private List<String> list = new ArrayList<>();
+
+
+    static class Add{
+        public int total;
+
+        public  void add(int n) {
+            total += n;
+        }
+    }
+
+
+    interface Task {
+        void execute();
+    }
+
+    static void doSomething(Task task){
+        task.execute();
+    }
+
+    static void doSomething(Runnable task){
+        task.run();
+    }
+
+    public static void main(String[] args) {
+        // compile error
+        // doSomething(() -> System.out.println(1));
+        Add add = new Add();
+        IntStream.rangeClosed(1, 100).parallel().forEach(add::add);
+        System.out.println(add.total);
+    }
+
+    public void test2() {
+        int a = 2;
+        Runnable r = () -> {
+            System.out.println(a);
+        };
+    }
 
     @Before
     public void addMap() {
@@ -61,7 +102,7 @@ public class StreamTest {
 
     @Test
     public void mapTest() {
-        List<Integer> collect = Stream.of(1, 4, 7, 8).map(x -> x * x).collect(Collectors.toList());
+        List<Integer> collect = Stream.of(1, 4, 7, 8).map(x -> x * x).collect(toList());
         System.out.println(collect.getClass());
     }
 
@@ -88,7 +129,7 @@ public class StreamTest {
 
     @Test
     public void testCollect() {
-        Map<Integer, String> collect = list.stream().collect(Collectors.toMap(String::length, t -> t.toUpperCase()));
+        Map<Integer, String> collect = list.stream().collect(toMap(String::length, t -> t.toUpperCase()));
         System.out.println(collect);
 
 
@@ -96,7 +137,7 @@ public class StreamTest {
 
     @Test
     public void money() {
-        Map<Integer, Integer> map = Stream.iterate(1, item -> item + 1).limit(100).collect(Collectors.toMap(x -> x, x -> 100));
+        Map<Integer, Integer> map = Stream.iterate(1, item -> item + 1).limit(100).collect(toMap(x -> x, x -> 100));
 
         for (int i = 0; i < 10000; i++) {
             Optional<Integer> minus = map.keySet().stream().filter(key -> map.get(key) > 0).findAny();
@@ -119,10 +160,17 @@ public class StreamTest {
         Stream<List<Integer>> listStream = Stream.of(Arrays.asList(1, 2), Arrays.asList(3, 4, 5));
 
         listStream.flatMap(x -> x.stream()).forEach(System.out::println);
-
-
+    }
+    
+    @Test
+    public void testFindFirst() {
+        Stream<Integer> stream = Stream.iterate(1, n -> n + 2);
     }
 
+    @Test
+    public void testFiles() {
+
+    }
 
     Optional<String> reduce = list.stream().reduce((x, y) -> x.length() < y.length() ? x : y);
 
