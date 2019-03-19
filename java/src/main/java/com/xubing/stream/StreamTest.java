@@ -44,12 +44,13 @@ public class StreamTest {
         task.run();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
         // compile error
         // doSomething(() -> System.out.println(1));
-        Add add = new Add();
-        IntStream.rangeClosed(1, 100).parallel().forEach(add::add);
-        System.out.println(add.total);
+      //  Add add = new Add();
+        //IntStream.rangeClosed(1, 100).parallel().forEach(add::add);
+      //  System.out.println(add.total);
+        Runtime runtime = Runtime.getRuntime();
     }
 
     public void test2() {
@@ -86,7 +87,6 @@ public class StreamTest {
         list.forEach(System.out::println);
 
         map.forEach((k, v) -> System.out.println(k + ":" + v));
-
 
     }
 
@@ -169,7 +169,8 @@ public class StreamTest {
 
     @Test
     public void testFiles() {
-
+        Optional<Integer> first = Stream.of(1, 2, 3, 4, 5).unordered().findFirst();
+        System.out.println(first.get());
     }
 
     Optional<String> reduce = list.stream().reduce((x, y) -> x.length() < y.length() ? x : y);

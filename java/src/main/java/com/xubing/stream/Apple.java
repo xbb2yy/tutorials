@@ -8,8 +8,6 @@ import java.util.Optional;
 
 /**
  * @author xubing xbbjava@163.com
- * @className Apple
- * @description TODO
  * @date 2018/5/31 9:36
  */
 @Data
