@@ -17,5 +17,6 @@ public class Main {
         System.out.println(5.0 / 3);
 
         StdRandom.uniform(2);
+        StdRandom.bernoulli(2);
     }
 }

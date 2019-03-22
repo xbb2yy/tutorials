@@ -4,12 +4,15 @@ import net.sf.cglib.proxy.MethodInterceptor;
 import net.sf.cglib.proxy.MethodProxy;
 import org.apache.commons.lang3.StringUtils;
 
+import java.io.InputStream;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.temporal.ChronoUnit;
+import java.util.Arrays;
+import java.util.Scanner;
 
 /**
  * @author xubing xbbjava@163.com
@@ -104,18 +107,17 @@ class Person implements Say {
         return "hello";
     }
 
-    public static void main(String[] args) {
-        Person person = new Person();
-        try {
-            Method method = Say.class.getMethod("say", new Class[]{String.class});
-            method.invoke(person, "test");
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        }
+    public static void main(String[] args) throws Exception{
+        String s = "中国";
+
+        String s1 = new String("中国");
+        byte[] bytes = s.getBytes("gbk");
+        System.out.println(new String(bytes));
+        System.out.println(Arrays.toString(bytes));
+
+        InputStream in = Main.class.getResourceAsStream("a.txt");
+        Scanner scanner = new Scanner(in);
+        System.out.println(scanner.nextLine());
     }
 }
 
