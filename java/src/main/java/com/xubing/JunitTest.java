@@ -48,7 +48,7 @@ public class JunitTest {
         System.out.println(LocalTime.now());
         GoogleAuthenticator ga = new GoogleAuthenticator();
         ga.setWindowSize(3);
-        boolean r = ga.check_code(secret, code, t);git
+        boolean r = ga.check_code(secret, code, t);
         System.out.println("检查code是否正确？" + r);
     }
 
@@ -59,6 +59,8 @@ public class JunitTest {
 
     public static void main(String[] args) throws Exception{
         Base32 codec = new Base32();
+
+
         byte[] decodedKey = codec.decode(secret);
         System.out.println(LocalTime.now());
         int i = GoogleAuthenticator.verify_code(decodedKey, System.currentTimeMillis() / 1000 / 30);
