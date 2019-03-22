@@ -48,7 +48,7 @@ public class JunitTest {
         System.out.println(LocalTime.now());
         GoogleAuthenticator ga = new GoogleAuthenticator();
         ga.setWindowSize(3);
-        boolean r = ga.check_code(secret, code, t);
+        boolean r = ga.check_code(secret, code, t);git
         System.out.println("检查code是否正确？" + r);
     }
 
