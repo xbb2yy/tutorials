@@ -1,5 +1,7 @@
 package com.xubing.string;
 
+import java.util.Arrays;
+
 /**
  * @author xubingbing xbbjava@163.com
  * @date 2018/8/1 10:33
@@ -22,5 +24,16 @@ public class StringTest {
         for (int i = 0; i < 5; i++) {
             str = str + "123";
         }
+    }
+
+    public static void main(String[] args) throws Exception{
+        char c = '\u4e2d';
+        System.out.println(c); // 中
+        System.out.println((int) c); // 20013
+        String z = "中";
+        System.out.println(Arrays.toString(z.getBytes("gbk")));
+        System.out.println(Arrays.toString(z.getBytes("utf-8")));
+        System.out.println(Arrays.toString(z.getBytes("ascii")));
+        System.out.println(Arrays.toString("国".getBytes("ascii")));
     }
 }
