@@ -7,8 +7,8 @@ package com.xubing.construtor;
 public class Main {
     public static void main(String[] args) {
         Person p = new Man();
-        p.say("je;;p");
         p.run();
+        p.say("i am man");
         String s = p.hello();
         System.out.println(s);
     }
