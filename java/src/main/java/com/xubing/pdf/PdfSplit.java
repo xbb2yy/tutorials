@@ -33,7 +33,7 @@ public class PdfSplit {
             document.open();
             PdfContentByte cb = writer.getDirectContent();
             // Holds the PDF data
-            writer.
+
             PdfImportedPage page = writer.getImportedPage(inputPDF, 1);
             document.newPage();
             cb.addTemplate(page, 0, 0);
