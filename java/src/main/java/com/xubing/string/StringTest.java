@@ -1,5 +1,8 @@
 package com.xubing.string;
 
+
+import org.junit.Test;
+
 import java.util.Arrays;
 
 /**
@@ -35,5 +38,12 @@ public class StringTest {
         System.out.println(Arrays.toString(z.getBytes("utf-8")));
         System.out.println(Arrays.toString(z.getBytes("ascii")));
         System.out.println(Arrays.toString("国".getBytes("ascii")));
+    }
+
+    @Test
+    public void test3() {
+        String s = new String("abc");
+        String intern = s.intern();
+        System.out.println(s == intern);
     }
 }
