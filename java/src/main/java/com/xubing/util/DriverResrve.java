@@ -8,6 +8,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
@@ -25,9 +26,12 @@ public class DriverResrve {
     private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
 
     public static void main(String[] args) throws Exception {
+        reserve();
+    }
+
+    public static void reserve() {
         CloseableHttpClient httpclient = HttpClients.createDefault();
         HttpGet httpGet = new HttpGet("http://www.gzjponline.com/Jp/GetSchedule?start=1553961600&end=1557590400");
-
         for (; ; ) {
             try(CloseableHttpResponse response = httpclient.execute(httpGet)) {
                 List<School> schools = JSON.parseArray(EntityUtils.toString(response.getEntity()), School.class);
@@ -37,19 +41,22 @@ public class DriverResrve {
                             DayOfWeek dayOfWeek = LocalDate.parse(s.getTheDate(), formatter).getDayOfWeek();
                             return  dayOfWeek.equals(DayOfWeek.SATURDAY) || dayOfWeek.equals(DayOfWeek.SUNDAY);
                         })
-                        .forEach(s -> System.out.println(s.getScheduleId()));
+                        .forEach(s -> JOptionPane.showMessageDialog(null, "找到空位:" +
+                                s.getScheduleId(),"标题", JOptionPane.PLAIN_MESSAGE));
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            TimeUnit.SECONDS.sleep(5);
+            try {
+                TimeUnit.SECONDS.sleep(5);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
-
     }
 }
 
 @Data
 class School {
-
     private String classRoomName;
     private String schoolId;
     private Integer bookCount;
@@ -58,5 +65,4 @@ class School {
     private Boolean isBookEnabled;
     private String schoolName;
     private String theDate;
-
 }

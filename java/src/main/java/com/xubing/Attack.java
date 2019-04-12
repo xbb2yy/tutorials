@@ -32,7 +32,6 @@ public class Attack {
         post.setEntity(entity);
 
         ExecutorService pool = Executors.newFixedThreadPool(7);
-
         for (int i = 0; i < 7; i++) {
             pool.submit(() -> {
                 CloseableHttpClient httpclient = HttpClients.createDefault();
