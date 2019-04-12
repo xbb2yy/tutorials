@@ -25,8 +25,6 @@ public class DriverResrve {
     private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
 
     public static void main(String[] args) throws Exception {
-
-
         CloseableHttpClient httpclient = HttpClients.createDefault();
         HttpGet httpGet = new HttpGet("http://www.gzjponline.com/Jp/GetSchedule?start=1553961600&end=1557590400");
 
