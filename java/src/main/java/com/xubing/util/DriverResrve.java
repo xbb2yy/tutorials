@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * 自动监控广州驾驶员理论培训空位
- *
+ * <p>
  * 空位不能再黄浦或者南沙，并且只能是周末
  */
 public class DriverResrve {
@@ -30,19 +30,25 @@ public class DriverResrve {
     }
 
     public static void reserve() {
+        String code = JOptionPane.showInputDialog("验证码");
         CloseableHttpClient httpclient = HttpClients.createDefault();
         HttpGet httpGet = new HttpGet("http://www.gzjponline.com/Jp/GetSchedule?start=1553961600&end=1557590400");
         for (; ; ) {
-            try(CloseableHttpResponse response = httpclient.execute(httpGet)) {
+            try (CloseableHttpResponse response = httpclient.execute(httpGet)) {
                 List<School> schools = JSON.parseArray(EntityUtils.toString(response.getEntity()), School.class);
-                schools.parallelStream().filter(School::getIsBookEnabled).filter(s -> s.getSeats() > s.getBookCount())
+                schools.parallelStream()
+                        .filter(School::getIsBookEnabled).filter(s -> s.getSeats() > s.getBookCount())
                         .filter(s -> !s.getSchoolName().contains("南沙") && !s.getSchoolName().contains("黄"))
                         .filter(s -> {
                             DayOfWeek dayOfWeek = LocalDate.parse(s.getTheDate(), formatter).getDayOfWeek();
-                            return  dayOfWeek.equals(DayOfWeek.SATURDAY) || dayOfWeek.equals(DayOfWeek.SUNDAY);
+                            return dayOfWeek.equals(DayOfWeek.SATURDAY) || dayOfWeek.equals(DayOfWeek.SUNDAY);
                         })
-                        .forEach(s -> JOptionPane.showMessageDialog(null, "找到空位:" +
-                                s.getScheduleId(),"标题", JOptionPane.PLAIN_MESSAGE));
+                        .limit(1)
+                        .forEach(s -> {
+                            JOptionPane.showMessageDialog(null, "找到空位:" +
+                                    s.getScheduleId(), "标题", JOptionPane.PLAIN_MESSAGE);
+                            System.out.println(s.getScheduleId());
+                        });
             } catch (IOException e) {
                 e.printStackTrace();
             }
