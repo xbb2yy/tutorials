@@ -1,5 +1,7 @@
 package com.xubing;
 
+import com.xubing.reuse.Man;
+import com.xubing.reuse.Person1;
 import net.sf.cglib.proxy.MethodInterceptor;
 import net.sf.cglib.proxy.MethodProxy;
 import org.apache.commons.lang3.StringUtils;
@@ -20,6 +22,8 @@ import java.util.Scanner;
  */
 public class Main {
     public static void main(String[] args) {
+        Man man = new Man();
+        Person1 person1 = man.get();
         System.out.println(System.getProperty("file.encoding"));
     }
 
