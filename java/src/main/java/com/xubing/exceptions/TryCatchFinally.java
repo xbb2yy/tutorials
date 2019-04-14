@@ -1,4 +1,4 @@
-package com.xubing.exception;
+package com.xubing.exceptions;
 
 import org.junit.Test;
 
