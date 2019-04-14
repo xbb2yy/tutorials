@@ -1,18 +1,12 @@
 package com.xubing;
 
 import com.xubing.reuse.Man;
-import com.xubing.reuse.Person1;
 import net.sf.cglib.proxy.MethodInterceptor;
 import net.sf.cglib.proxy.MethodProxy;
-import org.apache.commons.lang3.StringUtils;
 
 import java.io.InputStream;
 import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.time.LocalDate;
-import java.time.Period;
-import java.time.temporal.ChronoUnit;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -23,7 +17,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Man man = new Man();
-        Person1 person1 = man.get();
+        // can not compile
+        //Person1 person1 = man.get();
         System.out.println(System.getProperty("file.encoding"));
     }
 
@@ -40,8 +35,7 @@ public class Main {
         return str.matches("^-?\\d+$");
     }
 
-    public static boolean IsIntByChar(String str)
-    {
+    public static boolean IsIntByChar(String str) {
         if (str == null) {
             return false;
         }
@@ -111,7 +105,7 @@ class Person implements Say {
         return "hello";
     }
 
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) throws Exception {
         String s = "中国";
 
         String s1 = new String("中国");

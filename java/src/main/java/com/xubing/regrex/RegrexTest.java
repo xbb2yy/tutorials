@@ -17,7 +17,7 @@ import java.util.regex.Pattern;
 public class RegrexTest {
 
     public static final String EXAMPLE_TEST = "This is my small example "
-            + "string which I'm going to" + "use for pattern matching.";
+            + "strings which I'm going to" + "use for pattern matching.";
 
 
     @Test

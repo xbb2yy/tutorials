@@ -1,4 +1,4 @@
-package com.xubing.string;
+package com.xubing.strings;
 
 
 import org.junit.Test;
