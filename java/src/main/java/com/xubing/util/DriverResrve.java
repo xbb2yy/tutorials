@@ -30,7 +30,6 @@ public class DriverResrve {
     }
 
     public static void reserve() {
-        String code = JOptionPane.showInputDialog("验证码");
         CloseableHttpClient httpclient = HttpClients.createDefault();
         HttpGet httpGet = new HttpGet("http://www.gzjponline.com/Jp/GetSchedule?start=1553961600&end=1557590400");
         for (; ; ) {

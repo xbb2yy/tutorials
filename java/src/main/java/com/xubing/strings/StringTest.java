@@ -4,6 +4,7 @@ package com.xubing.strings;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.Formatter;
 
 /**
  * @author xubingbing xbbjava@163.com
@@ -45,5 +46,7 @@ public class StringTest {
         String s = new String("abc");
         String intern = s.intern();
         System.out.println(s == intern);
+
+        new Formatter();
     }
 }
