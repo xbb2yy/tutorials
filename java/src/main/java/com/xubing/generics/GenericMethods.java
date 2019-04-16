@@ -16,5 +16,6 @@ public class GenericMethods {
         methods.f(1, 1,  1);
         methods.f(1.0, 2, 2);
         methods.f(new ArrayList<>(), 2, 4);
+        methods.f(new GenericMethods(), 2, 4);
     }
 }
