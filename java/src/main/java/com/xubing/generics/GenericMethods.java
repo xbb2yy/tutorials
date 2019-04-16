@@ -2,6 +2,9 @@ package com.xubing.generics;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class GenericMethods {
     public  <T, R, V>  void  f(T t, R r, V v){

@@ -25,6 +25,7 @@ public class New {
         List<String> list = New.list();
         list.add("23");
 
+
         f(new HashMap<>());
         // java8已经能编译通过，以下编译不通过
         f(New.map());
