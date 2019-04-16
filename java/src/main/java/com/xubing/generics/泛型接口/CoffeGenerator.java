@@ -1,6 +1,5 @@
-package com.xubing.generic.泛型接口;
+package com.xubing.generics.泛型接口;
 
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Random;
 

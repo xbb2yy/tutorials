@@ -1,6 +1,6 @@
-package com.xubing.generic;
+package com.xubing.generics;
 
-import com.xubing.generic.泛型接口.Generator;
+import com.xubing.generics.泛型接口.Generator;
 
 public class Fibonacci implements Generator<Integer> {
 

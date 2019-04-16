@@ -1,4 +1,4 @@
-package com.xubing.generic;
+package com.xubing.generics;
 
 import org.junit.Test;
 

@@ -1,12 +1,6 @@
-package com.xubing.generic;
+package com.xubing.generics;
 
 import org.junit.Test;
-
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.util.TreeSet;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 public class EraseAndInheritance {
     public static void main(String[] args) {

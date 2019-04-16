@@ -1,4 +1,4 @@
-package com.xubing.generic;
+package com.xubing.generics;
 
 public class Manipulator2<T extends HasF> {
     private T t;

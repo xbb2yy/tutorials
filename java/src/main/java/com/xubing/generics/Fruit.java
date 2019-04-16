@@ -1,4 +1,4 @@
-package com.xubing.generic;
+package com.xubing.generics;
 
 /**
  * @author xubing xbbjava@163.com

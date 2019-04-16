@@ -1,4 +1,4 @@
-package com.xubing.generic;
+package com.xubing.generics;
 
 import java.util.ArrayList;
 import java.util.HashMap;

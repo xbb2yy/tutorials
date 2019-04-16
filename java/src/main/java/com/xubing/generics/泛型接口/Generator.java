@@ -1,4 +1,4 @@
-package com.xubing.generic.泛型接口;
+package com.xubing.generics.泛型接口;
 
 /**
  * @author xubingbing xbbjava@163.com
