@@ -6,7 +6,7 @@ package com.xubing.generics;
  */
 public class LinkedStack<T> {
 
-    private static class Node<U> {
+    private  class Node<U> {
         U item;
         Node<U> next;
         Node() {}
@@ -19,7 +19,7 @@ public class LinkedStack<T> {
         }
     }
 
-    private Node<T> top = new Node<>();  // end sentinel
+    private Node<T> top = new Node<>();  // 栈顶哨兵
 
     public void push(T item) {
         Node node = new Node<>(item, top);
