@@ -2,8 +2,6 @@ package com.xubing.generics;
 
 import com.xubing.generics.泛型接口.Generator;
 
-import java.util.ArrayList;
-
 public class Fibonacci implements Generator<Integer> {
 
     private int count = 0;
@@ -22,7 +20,7 @@ public class Fibonacci implements Generator<Integer> {
 
     public static void main(String[] args) {
         Fibonacci fibonacci = new Fibonacci();
-        for (int i = 0; i <20 ; i++) {
+        for (int i = 0; i < 20; i++) {
             System.out.println(fibonacci.next());
         }
 

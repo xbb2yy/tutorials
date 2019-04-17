@@ -36,8 +36,16 @@ public class Apple extends Fruit {
         *  */
        Fruit[] f = new Apple[10];
        f[0] = new Apple();
-       f[1] = new Fruit(); // 可以编译通过，运行时报错
+       //f[1] = new Fruit();  可以编译通过，运行时报错
         System.out.println(Arrays.toString(f));
+
+        List<? extends Fruit> apples1 = Arrays.asList(new Apple());
+        // apples1.add(new Fruit()); 编译错误
+       // apples1.add(new Apple());
+        Fruit fruit = apples1.get(0);
+        apples1.contains(new Apple());
+        apples1.contains(new Object());
+
 
     }
 

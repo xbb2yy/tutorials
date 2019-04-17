@@ -1,20 +1,38 @@
 package com.xubing.generics;
 
 public class Holder<T> {
-    private T a;
+    private T value;
+
+    public Holder() {
+    }
+
+    public Holder(T a) {
+        this.value = a;
+    }
 
     public void set(T a) {
-        this.a = a;
+        this.value = a;
     }
 
     public T get() {
-        return this.a;
+        return this.value;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return value.equals(obj);
     }
 
     public static void main(String[] args) {
-        Holder<String> holder = new Holder<>();
-        holder.set("bing");
-        String s = holder.get();
-        System.out.println(s);
+       Holder<Apple> apple = new Holder(new Apple());
+        Apple apple1 = apple.get();
+        apple.set(new Jonathan());
+
+        // Holder<Fruit> fruitHolder = apple; 编译错误
+
+        Holder<? extends Fruit> fruit = apple;
+        Fruit fruit1 = fruit.get();
+
+        // fruit.set(new Apple());
     }
 }
