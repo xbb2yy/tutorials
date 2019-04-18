@@ -1,12 +1,11 @@
 package com.xubing.generics;
 
-import org.junit.Test;
-
 public class EraseAndInheritance {
     public static void main(String[] args) {
         Derived<String> derived = new Derived<>();
         String s = derived.get();
         Derived2 d2 = new Derived2();
+        d2.set(1);
         Object o = d2.get();
         d2.set("2342");
     }
