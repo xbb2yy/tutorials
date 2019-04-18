@@ -14,12 +14,23 @@ public class TupleTest {
         return new TwoTuple<>("2", 1);
     }
 
+    static <T> T t(T t) {
+        return t;
+    }
+
     public static void main(String[] args) {
+
+        Integer t = t(1);
+
         TwoTuple<String, Integer> g = g();
         System.out.println(g);
+        String a = g.a;
 
-        TwoTuple f = f();
-        System.out.println(f);
-        System.out.println(f.a.getClass().getSimpleName());
+        TwoTuple<Integer, String> f = f();
+        Integer a1 = f.a;
+
+        TwoTuple f1 = f();
+        Object a2 = f1.a;
+
     }
 }
