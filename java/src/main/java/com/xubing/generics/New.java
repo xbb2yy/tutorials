@@ -15,12 +15,16 @@ public class New {
         return new ArrayList<>();
     }
 
-    static void f(Map<String, String> m){
+    static void f(Map<String, List<? extends CharSequence>> map){
     }
 
     public static void main(String[] args) {
+
+        Map<String, List<? extends CharSequence>> map1 = new HashMap<>();
+
         Map<String, String> map = New.map();
         map.put("1", "1");
+
 
         List<String> list = New.list();
         list.add("23");
