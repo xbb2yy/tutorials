@@ -3,7 +3,7 @@ package com.xubing.generics.泛型接口;
 import java.util.Iterator;
 import java.util.Random;
 
-public class CoffeGenerator implements Generator<Coffee>, Iterable<Coffee> {
+public class CoffeGenerator implements Generator, Iterable<Coffee> {
 
     private Class[] types = {Americano.class, Breve.class, Cappuccino.class, Lattte.class, Mocha.class};
     private static Random ran = new Random(47);
