@@ -1,8 +1,6 @@
-package com.xubing.fx;
+package com.xubing.fx.login;
 
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -32,11 +30,13 @@ public class Login extends Application {
         grid.setPadding(new Insets(25, 25, 25, 25));
 
         Scene scene = new Scene(grid, 300, 275);
+        System.out.println(Login.class.getResource("/login.css"));
+       scene.getStylesheets().add(Login.class.getResource("/login.css").toExternalForm());
       // grid.setGridLinesVisible(true);
         primaryStage.setScene(scene);
 
         Text scenetitle = new Text("Welcome");
-        scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
+        scenetitle.setId("welcome-text");
         grid.add(scenetitle, 0, 0, 2, 1);
 
         //创建Label对象，放到第0列，第1行
@@ -64,7 +64,7 @@ public class Login extends Application {
 
         //注册事件handler
         btn.setOnAction(e -> {
-            actiontarget.setFill(Color.FIREBRICK);//将文字颜色变成 firebrick red
+            actiontarget.setId("actiontarget");
             actiontarget.setText("Sign in button pressed");
         });
         primaryStage.show();
