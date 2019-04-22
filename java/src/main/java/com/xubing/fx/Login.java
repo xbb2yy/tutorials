@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -46,6 +47,8 @@ public class Login extends Application {
 
         PasswordField pwBox = new PasswordField();
         grid.add(pwBox, 1, 2);
+
+        Button btn = new Button();
         primaryStage.show();
 
 
