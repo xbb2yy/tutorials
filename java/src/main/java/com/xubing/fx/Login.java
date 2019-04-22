@@ -26,6 +26,7 @@ public class Login extends Application {
         grid.setPadding(new Insets(25, 25, 25, 25));
 
         Scene scene = new Scene(grid, 300, 275);
+      // grid.setGridLinesVisible(true);
         primaryStage.setScene(scene);
 
         Text scenetitle = new Text("Welcome");
