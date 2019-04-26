@@ -10,9 +10,6 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -31,8 +28,8 @@ public class Login extends Application {
 
         Scene scene = new Scene(grid, 300, 275);
         System.out.println(Login.class.getResource("/login.css"));
-       scene.getStylesheets().add(Login.class.getResource("/login.css").toExternalForm());
-      // grid.setGridLinesVisible(true);
+        scene.getStylesheets().add(Login.class.getResource("/login.css").toExternalForm());
+        // grid.setGridLinesVisible(true);
         primaryStage.setScene(scene);
 
         Text scenetitle = new Text("Welcome");
@@ -59,7 +56,7 @@ public class Login extends Application {
         hBox.getChildren().add(btn);
         grid.add(hBox, 1, 4);
 
-        final Text actiontarget=new Text();//增加用于显示信息的文本
+        final Text actiontarget = new Text();//增加用于显示信息的文本
         grid.add(actiontarget, 1, 6);
 
         //注册事件handler
