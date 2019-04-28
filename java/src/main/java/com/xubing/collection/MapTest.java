@@ -10,6 +10,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.UUID;
 import java.util.concurrent.Callable;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author xubing xbbjava@163.com
@@ -19,18 +20,20 @@ public class MapTest {
 
     public static void main(String[] args) throws InterruptedException {
         Map<String, String> map = new HashMap<>(2);
+
+        map.put("a", "b");
         Thread t = new Thread(() -> {
             for (int i = 0; i < 10000; i++) {
-                new Thread(() -> {
-                    map.put(UUID.randomUUID().toString(), "1");
-                }).start();
+                new Thread(() -> map.put(UUID.randomUUID().toString() + UUID.randomUUID(), "1")).start();
             }
         });
 
         t.start();
         t.join();
 
-        System.out.println(map);
+      //  System.out.println(map);
+        TimeUnit.SECONDS.sleep(5);
+        System.out.println(map.size());
     }
 
     public static final int INT = 10;

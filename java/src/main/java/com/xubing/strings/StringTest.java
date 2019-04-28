@@ -18,6 +18,12 @@ public class StringTest {
         StringBuilder str1 = str.append(str);
     }
 
+    @Test
+    public void testSub() {
+        String str = "123456789340827199009262713";
+        System.out.println(str.substring(9));
+    }
+
     public void test1() {
         String str = "123";
     }
