@@ -55,4 +55,17 @@ public class StringTest {
 
         new Formatter();
     }
+
+    @Test
+    public void test4() {
+        String str = "123";
+        String str1 = new String("123");
+        String str2 = "123";
+
+        System.out.println(str1 == str2);
+        System.out.println(str == str2);
+
+        String intern = str.intern();
+        System.out.println(intern.getClass());
+    }
 }
