@@ -20,11 +20,21 @@ public class TimerTest {
                 throw new RuntimeException();
             }
         }, 2, 2000);
+        timer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                System.out.println(LocalTime.now());
+            }
+        }, 2, 2000);
 
         ScheduledExecutorService pool = Executors.newScheduledThreadPool(5);
         pool.scheduleAtFixedRate(() -> {
             System.out.println(LocalTime.now());
             throw new RuntimeException();
         }, 2, 2, TimeUnit.SECONDS);
+        pool.scheduleAtFixedRate(() -> {
+            System.out.println(LocalTime.now());
+        }, 2, 2, TimeUnit.SECONDS);
+
     }
 }
