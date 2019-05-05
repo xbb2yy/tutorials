@@ -58,15 +58,8 @@ public class JunitTest {
     }
 
     public static void main(String[] args) throws Exception{
-        Base32 codec = new Base32();
-
-
-        byte[] decodedKey = codec.decode(secret);
-        System.out.println(LocalTime.now());
-        int i = GoogleAuthenticator.verify_code(decodedKey, System.currentTimeMillis() / 1000 / 30);
-        System.out.println(i);
-
-        System.out.println(3300 / 1000 / 30);
+        int a = 500 * 400 * 200 * 300;
+        System.out.println(a);
 
     }
 
