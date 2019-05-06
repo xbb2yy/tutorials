@@ -12,6 +12,7 @@ public class Main {
 
 
     public static void main(String[] args) {
+
         LRU lru = new LRU();
         lru.put("1", "1");
         lru.put("2", "2");
