@@ -2,10 +2,10 @@ package JavaConcurrencyInPractice.c3;
 
 public class NoVisibility {
 
-    public static int num;
-    public static boolean flag;
+    public int num = 88;
+    public boolean flag;
 
-    static class ReadThread extends Thread {
+    class ReadThread extends Thread {
         @Override
         public void run() {
             while (!flag) {
@@ -16,9 +16,12 @@ public class NoVisibility {
     }
 
     public static void main(String[] args) {
-        new ReadThread().start();
-        num = 1;
-        flag = true;
+        for (int i = 0; i < 100000; i++) {
+            NoVisibility noVisibility = new NoVisibility();
+            noVisibility.new ReadThread().start();
+            noVisibility.flag = true;
+            noVisibility.num = 42;
+        }
     }
 
 }
