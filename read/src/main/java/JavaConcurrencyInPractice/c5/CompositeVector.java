@@ -32,7 +32,7 @@ public class CompositeVector {
     public static void main(String[] args) {
         CompositeVector compositeVector = new CompositeVector();
         new Thread(() -> compositeVector.getLast()).start();
-       // new Thread(() -> compositeVector.removeLast()).start();
+        // new Thread(() -> compositeVector.removeLast()).start();
 
         LinkedBlockingQueue<Object> queue = new LinkedBlockingQueue<>();
         while (true) {
