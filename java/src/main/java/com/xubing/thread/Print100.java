@@ -20,7 +20,6 @@ public class Print100 {
                             e.printStackTrace();
                         }
                     }
-
                     System.out.println(Thread.currentThread().getName() + ":" + i);
                     i++;
                     Print100.class.notify();
@@ -30,7 +29,6 @@ public class Print100 {
 
 
         new Thread(() -> {
-
             synchronized (Print100.class) {
                 while (i <= 99) {
                     if (i % 2 != 0) {
@@ -40,7 +38,6 @@ public class Print100 {
                             e.printStackTrace();
                         }
                     }
-
                     System.out.println(Thread.currentThread().getName() + ":" + i);
                     i++;
                     Print100.class.notify();
