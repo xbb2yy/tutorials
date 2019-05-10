@@ -7,7 +7,7 @@ import javax.servlet.ServletResponse;
 import java.io.IOException;
 import java.math.BigInteger;
 
-public class UnsafeCountingFactorizer extends GenericServlet {
+public class UnsafeCachingFactorizer extends GenericServlet {
 
     private long count = 0;
 
