@@ -10,7 +10,7 @@ public class DelegatingVechicleTracker {
 
     public DelegatingVechicleTracker(Map<String, Point> points) {
         this.locations = new ConcurrentHashMap<>(points);
-        this.unmodifiableMap = Collections.unmodifiableMap(points);
+        this.unmodifiableMap = Collections.unmodifiableMap(locations);
     }
 
     public Map<String, Point> getLocations() {
