@@ -6,7 +6,6 @@ import java.util.concurrent.ArrayBlockingQueue;
 
 /**
  * @author xubing xbbjava@163.com
- * @className BlockingQueneTest
  * @description TODO
  * @date 2018/6/7 10:25
  */
