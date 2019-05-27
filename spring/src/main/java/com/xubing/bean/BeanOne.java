@@ -17,7 +17,6 @@ public class BeanOne  {
 
     public BeanOne() {
 
-
         System.err.println("BeanOne Constructor Initialized");
     }
 

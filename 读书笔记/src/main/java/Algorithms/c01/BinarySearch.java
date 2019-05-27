@@ -1,5 +1,8 @@
 package Algorithms.c01;
 
+/**
+ * @description 二分查找
+ */
 public class BinarySearch {
 
     /**

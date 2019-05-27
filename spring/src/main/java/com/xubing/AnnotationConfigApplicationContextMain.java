@@ -21,5 +21,8 @@ public class AnnotationConfigApplicationContextMain {
 
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
+        for (String name : context.getBeanDefinitionNames()) {
+            System.out.println(name);
+        }
     }
 }
