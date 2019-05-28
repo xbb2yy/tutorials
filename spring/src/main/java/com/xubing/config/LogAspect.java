@@ -1,10 +1,8 @@
 package com.xubing.config;
 
-import com.xubing.bean.BeanOne;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
@@ -14,13 +12,6 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Component
 public class LogAspect {
-
-    public BeanOne beanOne;
-
-    @Autowired
-    public void set(BeanOne one) {
-
-    }
 
     @Pointcut("execution(* doS*(..))")
     public void pointCut() {
