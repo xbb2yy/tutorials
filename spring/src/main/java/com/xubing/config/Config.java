@@ -1,6 +1,8 @@
 package com.xubing.config;
 
 import com.xubing.annotation.BeanOne;
+import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.cache.concurrent.ConcurrentMapCacheManager;
 import org.springframework.context.annotation.*;
 
 /**
@@ -10,9 +12,15 @@ import org.springframework.context.annotation.*;
 @Configuration
 //@EnableAspectJAutoProxy
 @ComponentScan("com.xubing.annotation")
+@EnableCaching
 public class Config {
 
     public Config() {
         System.out.println("Config 类被创建了");
+    }
+
+    @Bean
+    public ConcurrentMapCacheManager cacheManager() {
+        return new ConcurrentMapCacheManager();
     }
 }

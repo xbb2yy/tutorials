@@ -10,6 +10,22 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>CA</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>
+                org.bouncycastle
+            </groupId>
+            <artifactId>
+                bcpkix-jdk15on
+            </artifactId>
+            <version>
+                1.51
+            </version>
+            <scope>
+                compile
+            </scope>
+        </dependency>
+    </dependencies>
 
 
 </project>
