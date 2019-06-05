@@ -12,6 +12,10 @@ public class AnnotationConfigApplicationContextMain {
 
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
+        String[] names = context.getBeanDefinitionNames();
+        for (int i = 0; i < names.length; i++) {
+            System.out.println();
+        }
         context.close();
     }
 }

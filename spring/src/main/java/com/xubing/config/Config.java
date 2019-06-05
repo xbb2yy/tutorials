@@ -13,6 +13,7 @@ import org.springframework.context.annotation.*;
 //@EnableAspectJAutoProxy
 @ComponentScan("com.xubing.annotation")
 @EnableCaching
+@Import(String.class)
 public class Config {
 
     public Config() {
