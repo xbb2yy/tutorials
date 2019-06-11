@@ -2,13 +2,11 @@ package com.xubing.annotation;
 
 import lombok.Data;
 import org.springframework.beans.BeansException;
-import org.springframework.beans.factory.BeanFactory;
-import org.springframework.beans.factory.BeanFactoryAware;
-import org.springframework.beans.factory.BeanNameAware;
-import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.*;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 /**
@@ -16,10 +14,10 @@ import org.springframework.stereotype.Service;
  * @date 2018/6/15 16:53
  */
 @Service
-public class BeanOne implements BeanNameAware, InitializingBean, BeanFactoryAware, ApplicationContextAware {
+public class BeanOne implements BeanNameAware, InitializingBean, BeanFactoryAware, ApplicationContextAware, DisposableBean {
 
     public BeanOne() {
-        System.err.println("BeanOne Constructor Initialized");
+        System.out.println("BeanOne Constructor Initialized");
     }
 
     public void doSomthing() {
@@ -31,7 +29,7 @@ public class BeanOne implements BeanNameAware, InitializingBean, BeanFactoryAwar
         System.out.println("init...");
     }
 
-    private void destroy() {
+    public void destroy() {
         System.out.println("destroy...");
     }
 
@@ -42,16 +40,17 @@ public class BeanOne implements BeanNameAware, InitializingBean, BeanFactoryAwar
 
     @Override
     public void setBeanName(String name) {
-        System.out.println(name);
+        System.out.println("beanOne setBeanName");
     }
 
     @Override
     public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
-        System.out.println("beanFactory");
+        System.out.println("beanOne setBeanFactory");
     }
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-        System.out.println("applicationContext");
+        System.out.println("beanOne setApplicationContext");
     }
+
 }

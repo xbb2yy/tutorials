@@ -1,9 +1,6 @@
 package com.xubing;
 
-import com.xubing.bean.Animal;
 import com.xubing.bean.Cat;
-import com.xubing.bean.Dog;
-import com.xubing.bean.Person;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**

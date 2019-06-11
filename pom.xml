@@ -12,7 +12,6 @@
         <module>读书笔记</module>
         <module>spring</module>
         <module>CA</module>
-        <module>springcontainer</module>
     </modules>
 
 </project>

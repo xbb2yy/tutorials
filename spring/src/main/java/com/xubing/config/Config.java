@@ -22,6 +22,7 @@ public class Config {
 
     @Bean
     public ConcurrentMapCacheManager cacheManager() {
+        System.out.println("ConcurrentMapCacheManager");
         return new ConcurrentMapCacheManager();
     }
 }
