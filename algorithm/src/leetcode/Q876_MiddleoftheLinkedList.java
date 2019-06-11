@@ -1,6 +1,8 @@
 package leetcode;
 
 
+import org.junit.experimental.theories.ParametersSuppliedBy;
+
 /**
  * Given a non-empty, singly linked list with head node head, return a middle node of linked list.
  * If there are two middle nodes, return the second middle node.
@@ -10,6 +12,7 @@ package leetcode;
  * Since the list has two middle nodes with values 3 and 4, we return the second one.
  *
  */
+@Pass
 public class Q876_MiddleoftheLinkedList {
 
     public static ListNode middleNode(ListNode head) {
@@ -20,7 +23,6 @@ public class Q876_MiddleoftheLinkedList {
             i++;
             tmp = tmp.next;
         }
-
 
         ListNode l = head;
         for (int k = 0; k < i / 2 ; k++) {
