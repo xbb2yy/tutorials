@@ -2,7 +2,7 @@ package leetcode;
 
 import java.util.List;
 
-public class Q039_CombinationSum {
+public class Q0039_CombinationSum {
 
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
 

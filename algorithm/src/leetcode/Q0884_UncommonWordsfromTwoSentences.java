@@ -1,6 +1,7 @@
 package leetcode;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
 /**
@@ -13,16 +14,16 @@ import java.util.stream.Collectors;
  * You may return the list in any order.
  */
 @Pass
-public class Q884_UncommonWordsfromTwoSentences {
+public class Q0884_UncommonWordsfromTwoSentences {
 
     public String[] uncommonFromSentences(String A, String B) {
 
         ArrayList<String> a = new ArrayList<>(Arrays.asList(A.split(" ")));
         a.addAll(Arrays.asList(B.split(" ")));
 
-        Map<String, Integer> map = new HashMap<>();
+        Map<String, Integer> map = new ConcurrentHashMap<>();
 
-        a.forEach(s -> {
+        a.parallelStream().forEach(s -> {
             if (map.containsKey(s)) {
                 Integer integer = map.get(s);
                 map.put(s, integer + 1);
@@ -32,7 +33,7 @@ public class Q884_UncommonWordsfromTwoSentences {
         });
 
 
-        List<String> collect = map.keySet().stream().filter(k -> map.get(k) == 1).collect(Collectors.toList());
+        List<String> collect = map.keySet().parallelStream().filter(k -> map.get(k) == 1).collect(Collectors.toList());
 
         String[] strings = new String[collect.size()];
         return collect.toArray(strings);

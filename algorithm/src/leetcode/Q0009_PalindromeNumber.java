@@ -1,6 +1,6 @@
 package leetcode;
 
-public class Q009_PalindromeNumber {
+public class Q0009_PalindromeNumber {
 
     public static boolean isPalindrome(int x) {
         if (x < 0) {

@@ -10,7 +10,7 @@ package leetcode;
  * Since the list has two middle nodes with values 3 and 4, we return the second one.
  */
 @Pass
-public class Q876_MiddleoftheLinkedList {
+public class Q0876_MiddleoftheLinkedList {
 
     public static ListNode middleNode(ListNode head) {
 
