@@ -5,6 +5,7 @@ public class Q0014_LongestCommonPrefix {
 
     public String longestCommonPrefix(String[] strs) {
 
+        // 考虑极限情况，增加数组不为空的判断。
         if (strs.length == 0) {
             return "";
         }
