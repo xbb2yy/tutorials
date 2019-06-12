@@ -1,5 +1,7 @@
 package leetcode;
 
+
+@Pass
 public class Q007_ReverseInteger {
 
     public static int reverse(int x) {

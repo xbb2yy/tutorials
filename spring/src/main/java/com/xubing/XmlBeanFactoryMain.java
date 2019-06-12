@@ -18,7 +18,6 @@ public class XmlBeanFactoryMain {
     public static void main(String[] args) throws Exception{
         XmlBeanFactory xmlBeanFactory = new XmlBeanFactory(new ClassPathResource("beans3.xml"));
 
-
         xmlBeanFactory.getBean("dog");
     }
 }

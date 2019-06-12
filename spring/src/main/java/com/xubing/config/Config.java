@@ -9,7 +9,7 @@ import org.springframework.context.annotation.*;
  * @author xubing xbbjava@163.com
  * @date 2018/6/14 10:44
  */
-@Configuration
+//@Configuration
 //@EnableAspectJAutoProxy
 @ComponentScan("com.xubing.annotation")
 @EnableCaching
