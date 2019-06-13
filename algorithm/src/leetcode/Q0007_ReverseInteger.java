@@ -1,6 +1,8 @@
 package leetcode;
 
 
+import leetcode.common.Pass;
+
 @Pass
 public class Q0007_ReverseInteger {
 

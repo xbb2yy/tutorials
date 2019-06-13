@@ -1,5 +1,7 @@
 package leetcode;
 
+import leetcode.common.Pass;
+
 @Pass
 public class Q0014_LongestCommonPrefix {
 

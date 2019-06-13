@@ -1,6 +1,9 @@
 package leetcode;
 
 
+import leetcode.common.Pass;
+import leetcode.common.TreeNode;
+
 /**
  * A binary tree is univalued if every node in the tree has the same value.
  * Return true if and only if the given tree is univalued.
@@ -33,12 +36,3 @@ public class Q0965_UnivaluedBinaryTree {
 }
 
 
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode(int x) {
-        val = x;
-    }
- }

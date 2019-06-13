@@ -1,5 +1,8 @@
 package leetcode;
 
+import leetcode.common.Pass;
+import leetcode.common.TreeNode;
+
 import java.util.HashSet;
 import java.util.Set;
 

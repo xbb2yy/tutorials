@@ -1,5 +1,7 @@
 package leetcode;
 
+import leetcode.common.Pass;
+
 import java.math.BigInteger;
 
 @Pass
