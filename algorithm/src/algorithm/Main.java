@@ -1,8 +1,11 @@
 package algorithm;
 
-import edu.princeton.cs.algs4.StdRandom;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class Main {
+
+    private final static Lock lock = new ReentrantLock();
 
     public static int gcd(int p, int q) {
         if (q == 0) {
@@ -13,10 +16,14 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        System.out.println(gcd(3, 5));
-        System.out.println(5.0 / 3);
 
-        StdRandom.uniform(2);
-        StdRandom.bernoulli(2);
+        try {
+            lock.tryLock();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            lock.unlock();
+        }
+
     }
 }
