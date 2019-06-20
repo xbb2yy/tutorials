@@ -17,13 +17,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        try {
-            lock.tryLock();
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            lock.unlock();
-        }
+        System.out.println(null != null);
 
     }
 }
