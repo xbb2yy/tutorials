@@ -14,4 +14,12 @@
         <module>CA</module>
     </modules>
 
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>
+            </id>
+        </snapshotRepository>
+    </distributionManagement>
+
 </project>
