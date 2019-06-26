@@ -12,14 +12,11 @@ public class Q0700_SearchinaBinarSearchTree {
             return root;
         }
 
-        if (searchBST(root.right, val) != null) {
+        if (val > root.val) {
             return searchBST(root.right, val);
-        }
-
-        if (searchBST(root.left, val) != null) {
+        } else {
             return searchBST(root.left, val);
         }
 
-        return null;
     }
 }
