@@ -1,5 +1,8 @@
 package leetcode;
 
+import leetcode.common.Pass;
+
+@Pass
 public class Q0852_PeakIndexinaMountainArray {
 
     public int peakIndexInMountainArray(int[] A) {
