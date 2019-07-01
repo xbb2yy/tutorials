@@ -1,14 +1,14 @@
 package leetcode;
 
+import leetcode.common.Pass;
+
 import java.util.*;
 
+@Pass
 public class Q0970_PowerfulIntegers {
     public List<Integer> powerfulIntegers(int x, int y, int bound) {
         Set<Integer> list = new HashSet<>();
         for (int i = 0; i <= 1000; i++) {
-            if (Math.pow(x, i) >= bound) {
-                break;
-            }
             for (int j = 0; j <= 1000 ; j++) {
                 int i1 = (int) (Math.pow(x, i) + Math.pow(y, j));
                 if (i1 <= bound) {
