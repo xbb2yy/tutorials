@@ -3,6 +3,8 @@ package com.xubing;
 import com.xubing.reuse.Man;
 import net.sf.cglib.proxy.MethodInterceptor;
 import net.sf.cglib.proxy.MethodProxy;
+import org.dom4j.Document;
+import org.dom4j.DocumentHelper;
 
 import java.io.InputStream;
 import java.lang.reflect.InvocationHandler;
@@ -15,11 +17,13 @@ import java.util.Scanner;
  * @date 2018/7/18 9:18
  */
 public class Main {
-    public static void main(String[] args) {
-        Man man = new Man();
-        // can not compile
-        //Person1 person1 = man.get();
-        System.out.println(System.getProperty("file.encoding"));
+    public static void main(String[] args) throws Exception{
+        Document doc = DocumentHelper.parseText("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
+                "<Result>\n" +
+                "\t<Code>1</Code><!-- 0:成功  其他失败 -->\n" +
+                "\t<Message>SUCCESS</Message>\n" +
+                "</Result>\n");
+        System.out.println(doc.getRootElement().elementText("Code"));
     }
 
     public static boolean IsInt(String string) {
