@@ -20,7 +20,22 @@ public class Q0121_BestTimetoBuyandSellStock {
         }
 
         return max;*/
+        if (prices.length <= 1) {
+            return 0;
+        }
+        int max = 0;
+        int min = prices[0];
+        for (int i = 0; i < prices.length ; i++) {
 
-        return 0;
+            if (min >= prices[i]) {
+                min = prices[i];
+            } else{
+                int diff = prices[i] - min;
+                if (diff > max) {
+                    max = diff;
+                }
+            }
+        }
+        return max;
     }
 }
