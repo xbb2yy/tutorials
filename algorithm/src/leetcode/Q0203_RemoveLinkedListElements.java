@@ -22,7 +22,6 @@ public class Q0203_RemoveLinkedListElements {
                 next = next.next;
             }
         }
-
         return node;
     }
 
