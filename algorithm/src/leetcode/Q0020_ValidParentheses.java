@@ -10,7 +10,8 @@ import java.util.Stack;
 public class Q0020_ValidParentheses {
     public static boolean isValid(String s) {
 
-      /*  if (s .equals("") ) {
+      /**
+       *  if (s .equals("") ) {
             return true;
         }
 
@@ -40,7 +41,8 @@ public class Q0020_ValidParentheses {
             }
         }
 
-        return stack.empty();*/
+        return stack.empty();
+       */
 
       Map<Character, Character> map = new HashMap<>();
       map.put('(', ')');
@@ -54,7 +56,7 @@ public class Q0020_ValidParentheses {
             if (chars[i] == '(' || chars[i] == '[' || chars[i] == '{') {
                 stack.push(chars[i]);
             } else {
-                if (stack.empty() || map.get(stack.peek()) != chars[i]) {
+                if (stack.empty() || map.get(stack.pop()) != chars[i]) {
                     return false;
                 }
             }
@@ -63,6 +65,6 @@ public class Q0020_ValidParentheses {
     }
 
     public static void main(String[] args) {
-        isValid("()");
+        System.out.println(isValid("()"));
     }
 }
