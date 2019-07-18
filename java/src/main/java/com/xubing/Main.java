@@ -110,7 +110,7 @@ class Person implements Say {
     }
 
     public static void main(String[] args) throws Exception {
-        String s = "中国";
+        /*String s = "中国";
 
         String s1 = new String("中国");
         byte[] bytes = s.getBytes("gbk");
@@ -119,7 +119,9 @@ class Person implements Say {
 
         InputStream in = Main.class.getResourceAsStream("a.txt");
         Scanner scanner = new Scanner(in);
-        System.out.println(scanner.nextLine());
+        System.out.println(scanner.nextLine());*/
+
+        System.out.println((char)999999999);
     }
 }
 
