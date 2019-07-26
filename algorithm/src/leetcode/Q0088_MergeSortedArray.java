@@ -1,7 +1,8 @@
 package leetcode;
 
-import javax.swing.*;
+import leetcode.common.Pass;
 
+@Pass
 public class Q0088_MergeSortedArray {
 
     public static void merge(int[] nums1, int m, int[] nums2, int n) {
@@ -13,7 +14,7 @@ public class Q0088_MergeSortedArray {
 
                 if (nums2[i] <= nums1[j]) {
                     tmp[j] = nums2[i];
-                    for (int k = j ; k < nums2.length; k++) {
+                    for (int k = j; k < c; k++) {
                         tmp[k + 1] = nums1[k];
                     }
                     break;
@@ -28,7 +29,13 @@ public class Q0088_MergeSortedArray {
                 }
 
             }
-            for (int j = 0; j < nums1.length ; j++) {
+            if (m == 0) {
+                for (int j = 0; j < n; j++) {
+                    nums1[j] = nums2[j];
+                }
+                return;
+            }
+            for (int j = 0; j < nums1.length; j++) {
                 nums1[j] = tmp[j];
             }
             c++;
@@ -36,8 +43,8 @@ public class Q0088_MergeSortedArray {
     }
 
     public static void main(String[] args) {
-        int[] a = {1, 2, 3, 0, 0, 0};
-        int[] b = {2, 5, 6};
-        merge(a, 3, b, 3);
+        int[] a = {};
+        int[] b = {1};
+        merge(a, 0, b, 1);
     }
 }
