@@ -17,7 +17,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        System.out.println(null != null);
+        System.out.printf("%-5.2s%d", "hgfhgfghfh", 13324);
 
     }
 }
