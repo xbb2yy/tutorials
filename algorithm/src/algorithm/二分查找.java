@@ -1,5 +1,10 @@
 package algorithm;
 
+import edu.princeton.cs.algs4.In;
+import edu.princeton.cs.algs4.StdIn;
+
+import java.util.Arrays;
+
 /**
  * @author xubingbing xbbjava@163.com
  * @date 2018/10/24 9:53
@@ -8,6 +13,8 @@ public class 二分查找 {
 
 
     public static void main(String[] args) {
+        int[] ints = StdIn.readAllInts();
+        System.out.println(Arrays.toString(ints));
         int[] array = {1, 2, 6, 7, 8, 9};
         int i = binarySearch(array, 7);
         System.out.println(i);
@@ -18,19 +25,22 @@ public class 二分查找 {
 
     public static int binarySearch(int[] array, int key) {
 
-        int lo = 0;
-        int hi = array.length - 1;
-
+       int lo = 0;
+       int hi = array.length - 1;
         while (lo <= hi) {
             int mid = lo + (hi - lo) / 2;
-            if (array[mid] == key) {
-                return mid;
-            } else if (array[mid] > key) {
+            if (array[mid] > key) {
                 hi = mid - 1;
-            } else {
+            }
+            if (array[mid] < key) {
                 lo = mid + 1;
             }
+            if (array[mid] == key) {
+                return mid;
+            }
+
         }
+
         return -1;
     }
 
