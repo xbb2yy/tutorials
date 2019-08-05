@@ -2,6 +2,9 @@ package algorithm.c1;
 
 import edu.princeton.cs.algs4.StdOut;
 
+/**
+ * 求两个数的最大公约数
+ */
 public class GCD {
 
     public static int gcd(int p, int q) {
@@ -12,8 +15,7 @@ public class GCD {
         return gcd(q, r);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         StdOut.println(gcd(3, 5));
-
     }
 }
