@@ -1,17 +1,18 @@
 package algorithm.c1;
 
 import edu.princeton.cs.algs4.StdRandom;
-import edu.princeton.cs.algs4.Stopwatch;
+
+
 
 public class StopWatch {
 
-    private final Long start;
+    private final  Long start ;
 
     public StopWatch() {
         start = System.currentTimeMillis() ;
     }
 
-    public double elapseTime() {
+    public  double elapseTime() {
         return (System.currentTimeMillis() - start) / 1000.0;
     }
 
@@ -22,8 +23,8 @@ public class StopWatch {
             a[i] = StdRandom.uniform(-10000000, 10000000);
         }
 
-        Stopwatch timer = new Stopwatch();
+        StopWatch timer = new StopWatch();
         int cnt = ThreeSum.count(a);
-        System.out.println(cnt + "triples" + timer.elapsedTime() + "seconds");
+        System.out.println(cnt + "triples" + timer.elapseTime() + "seconds");
     }
 }
