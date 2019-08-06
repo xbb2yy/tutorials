@@ -1,8 +1,6 @@
 package algorithm.c1;
 
-import edu.princeton.cs.algs4.StdOut;
-import edu.princeton.cs.algs4.StdRandom;
-import edu.princeton.cs.algs4.Stopwatch;
+import edu.princeton.cs.algs4.*;
 
 public class DoublingTest {
 
@@ -18,9 +16,11 @@ public class DoublingTest {
     }
 
     public static void main(String[] args) {
+        StdDraw.line(1.0, 1.0, 2.0, 2.0);
         for (int i = 250; true; i += i) {
             double time = timeTrial(i);
             StdOut.printf("%-7d%5.1f\n", i, time);
+            StdDraw.point(i, time);
         }
     }
 }

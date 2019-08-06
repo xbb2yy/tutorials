@@ -16,8 +16,6 @@ public class Main {
     }
 
     public static void main(String[] args) {
-
-        System.out.printf("%-5.2s%d", "hgfhgfghfh", 13324);
-
+        System.out.println(-5 / 3);
     }
 }
