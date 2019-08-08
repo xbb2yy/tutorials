@@ -8,8 +8,11 @@ public class Main {
         print();
     }
 
+    /**
+     * 两个线程交替打印0-100
+     */
     public static void print() {
-        new Thread(() ->{
+        new Thread(() -> {
             while (a <= 100) {
                 synchronized (Main.class) {
                     if (a % 2 == 0) {
@@ -26,9 +29,9 @@ public class Main {
             }
         }).start();
 
-        new Thread(() ->{
+        new Thread(() -> {
             while (a <= 100) {
-                
+
                 synchronized (Main.class) {
                     if (a % 2 != 0) {
                         System.out.println(Thread.currentThread().getName() + ":" + a++);
