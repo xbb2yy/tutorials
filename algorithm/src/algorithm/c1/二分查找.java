@@ -1,8 +1,6 @@
 package algorithm.c1;
 
-import edu.princeton.cs.algs4.StdIn;
-
-import java.util.Arrays;
+import edu.princeton.cs.algs4.StdDraw;
 
 /**
  * @author xubingbing xbbjava@163.com
@@ -12,20 +10,16 @@ public class 二分查找 {
 
 
     public static void main(String[] args) {
-        int[] ints = StdIn.readAllInts();
-        System.out.println(Arrays.toString(ints));
-        int[] array = {1, 2, 6, 7, 8, 9};
-        int i = binarySearch(array, 7);
-        System.out.println(i);
-
-        System.out.println(recursionBinarySearch(array, 7, 0, 5));
+        for (int i = 0; i < 100; i++) {
+            StdDraw.point(i, i);
+        }
     }
 
 
     public static int binarySearch(int[] array, int key) {
 
-       int lo = 0;
-       int hi = array.length - 1;
+        int lo = 0;
+        int hi = array.length - 1;
         while (lo <= hi) {
             int mid = lo + (hi - lo) / 2;
             if (array[mid] > key) {

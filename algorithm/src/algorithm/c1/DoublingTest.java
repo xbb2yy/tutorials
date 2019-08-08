@@ -16,11 +16,9 @@ public class DoublingTest {
     }
 
     public static void main(String[] args) {
-        StdDraw.line(1.0, 1.0, 2.0, 2.0);
         for (int i = 250; true; i += i) {
             double time = timeTrial(i);
             StdOut.printf("%-7d%5.1f\n", i, time);
-            StdDraw.point(i, time);
         }
     }
 }
