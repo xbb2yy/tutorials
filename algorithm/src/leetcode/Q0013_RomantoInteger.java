@@ -5,6 +5,12 @@ import leetcode.common.Pass;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 罗马数字转阿拉伯数字
+ * 思路:
+ * 用map保存映射，然后从左往右每次读入一个字符，如果该字符保存的映射值比它右边的小就减去改字符的映射，否则加上该字符的映射
+ * i + 1 < chars.length && map.get(chars[i]) < map.get(chars[i + 1])
+ */
 @Pass
 public class Q0013_RomantoInteger {
 
