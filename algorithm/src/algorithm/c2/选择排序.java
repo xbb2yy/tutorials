@@ -1,4 +1,4 @@
-package algorithm;
+package algorithm.c2;
 
 /**
  * @author xubingbing xbbjava@163.com
@@ -16,13 +16,13 @@ public class 选择排序 {
 
     // 选择排序
     public static int[] sort(int[] a) {
-        for (int i = 0; i < a.length; i++) {
-            for (int j = i + 1; j < a.length; j++) {
-                if (a[i] > a[j]) {
-                    int tmp;
-                    tmp = a[j];
-                    a[j] = a[i];
-                    a[i] = tmp;
+        int N = a.length;
+        for (int i = 0; i < N; i++) {
+            for (int j = i + 1; j < N; j++) {
+                if (a[j] < a[i]) {
+                    int tmp = a[i];
+                    a[i] = a[j];
+                    a[j] = tmp;
                 }
             }
         }
