@@ -1,9 +1,7 @@
 package algorithm.c2;
 
-import javax.sound.midi.Soundbank;
 
-import static algorithm.c2.Example.isSorted;
-import static algorithm.c2.Example.show;
+import static algorithm.c2.Example.*;
 
 public class Merge {
 
@@ -15,7 +13,8 @@ public class Merge {
     }
 
     private static void sort(Comparable[] a, int lo, int hi) {
-        if (hi <= lo) return;
+        if (hi <= lo)
+            return;
         int mid = lo + (hi - lo) / 2;
         sort(a, lo, mid);
         sort(a, mid + 1, hi);
@@ -23,16 +22,21 @@ public class Merge {
     }
 
     public static void merge(Comparable[] a, int lo, int mid, int hi) {
-        int i = lo; int j = mid + 1;
+        int i = lo;
+        int j = mid + 1;
         for (int k = lo; k <= hi; k++) {
             aux[k] = a[k];
         }
 
         for (int k = lo; k <= hi; k++) {
-            if (i > mid) a[k] = aux[j++];
-            else if (j > hi) a[k] = aux[i++];
-            else if(Example.less(aux[j], aux[i])) a[k] = aux[j++];
-            else a[k] = aux[i++];
+            if (i > mid)
+                a[k] = aux[j++];
+            else if (j > hi)
+                a[k] = aux[i++];
+            else if (less(aux[j], aux[i]))
+                a[k] = aux[j++];
+            else
+                a[k] = aux[i++];
         }
     }
 
