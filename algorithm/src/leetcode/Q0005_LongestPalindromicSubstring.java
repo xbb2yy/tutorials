@@ -5,6 +5,7 @@ package leetcode;
  */
 public class Q0005_LongestPalindromicSubstring {
     public String longestPalindrome(String s) {
+
         return null;
     }
 }
