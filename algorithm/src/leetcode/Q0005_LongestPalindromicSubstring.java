@@ -1,11 +1,17 @@
 package leetcode;
 
+import leetcode.common.Pass;
+
 /**
  * 找出字符串中最大的回文串
  */
+@Pass
 public class Q0005_LongestPalindromicSubstring {
     public static String longestPalindrome(String s) {
 
+        if (s.isEmpty()) {
+            return "";
+        }
         int N = s.length();
         int start = 0;
         int end = 0;
@@ -21,7 +27,7 @@ public class Q0005_LongestPalindromicSubstring {
                 }
             }
 
-            for (int j = 1; i - j >= 0 && i + j < N; j++) {
+            for (int j = 1; i - j + 1>= 0 && i + j < N; j++) {
                 if (s.charAt(i - j + 1) == s.charAt(i + j)) {
                     l += 2;
                 } else {
@@ -30,11 +36,13 @@ public class Q0005_LongestPalindromicSubstring {
             }
 
             if (k > l && k > max) {
-                start = i - (l) / 2 - 1;
-                end = i + (l) / 2 + 1;
+                max = k;
+                start = i - (k - 1) / 2;
+                end = i + (k - 1) / 2 ;
             }
             if (l > k && l > max) {
-                start = i - l / 2 + 2;
+                max = l;
+                start = i - l / 2 + 1;
                 end = i + l  / 2;
             }
         }
@@ -45,6 +53,6 @@ public class Q0005_LongestPalindromicSubstring {
     }
 
     public static void main(String[] args) {
-        System.out.println(longestPalindrome("abba"));
+        System.out.println(longestPalindrome("aaaa"));
     }
 }
