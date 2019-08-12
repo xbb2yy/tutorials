@@ -3,7 +3,7 @@ package leetcode;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Q961_NRepeatedElementinSize2NArray {
+public class Q0961_NRepeatedElementinSize2NArray {
 
     public int repeatedNTimes(int[] A) {
 

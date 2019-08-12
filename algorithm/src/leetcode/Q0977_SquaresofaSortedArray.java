@@ -2,7 +2,7 @@ package leetcode;
 
 import java.util.Arrays;
 
-public class Q977_SquaresofaSortedArray {
+public class Q0977_SquaresofaSortedArray {
 
     public int[] sortedSquares(int[] A) {
         int[] a = new int[A.length];

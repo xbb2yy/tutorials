@@ -5,7 +5,7 @@ import leetcode.common.Pass;
 import java.util.Arrays;
 
 @Pass
-public class Q976_LargestPerimeterTriangle {
+public class Q0976_LargestPerimeterTriangle {
 
     public static int largestPerimeter(int[] A) {
         Arrays.sort(A);

@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @Pass
-public class Q811_SubdomainVisitCount {
+public class Q0811_SubdomainVisitCount {
 
     public static List<String> subdomainVisits(String[] cpdomains) {
         Map<String, Integer> map = new HashMap<>();

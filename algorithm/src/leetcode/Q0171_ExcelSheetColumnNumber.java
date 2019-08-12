@@ -4,7 +4,7 @@ package leetcode;
 import leetcode.common.Pass;
 
 @Pass
-public class Q_0171_ExcelSheetColumnNumber {
+public class Q0171_ExcelSheetColumnNumber {
 
     public int titleToNumber(String s) {
 

@@ -5,7 +5,7 @@ import leetcode.common.Pass;
 import java.util.*;
 
 @Pass
-public class Q500_KeyboardRow {
+public class Q0500_KeyboardRow {
 
     private static Map<Character, Integer> map = new HashMap<>();
 

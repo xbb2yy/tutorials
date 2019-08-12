@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class Q897_IncreasingOrderSearchTree {
+public class Q0897_IncreasingOrderSearchTree {
 
     public TreeNode increasingBST(TreeNode root) {
 

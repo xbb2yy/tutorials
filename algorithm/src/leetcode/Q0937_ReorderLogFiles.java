@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Pass
-public class Q937_ReorderLogFiles {
+public class Q0937_ReorderLogFiles {
 
     public static String[] reorderLogFiles(String[] logs) {
 
