@@ -1,7 +1,6 @@
 package leetcode;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class Q0003_LongestSubstringWithoutRepeatingCharacters {
 
@@ -22,5 +21,39 @@ public class Q0003_LongestSubstringWithoutRepeatingCharacters {
                 max = characters.size();
         }
         return max;
+    }
+
+
+    public static int Solution(String s) {
+
+        int max = 0;
+        int cur = 0;
+        Map<Character, Integer> map = new HashMap<>();
+        Map<Integer, Character> m = new HashMap<>();
+        for (int i = 0; i < s.length() ; i++) {
+            if (map.containsKey(s.charAt(i))) {
+                if (cur > max) {
+                    max = cur;
+                }
+                Integer index = map.get(s.charAt(i));
+                cur = i - index;
+
+                map.clear();
+                m.put(i, s.charAt(i));
+                for (int j = index + 1; j <= i; j++) {
+                    map.put(m.get(j), j);
+                }
+            } else {
+                map.put(s.charAt(i), i);
+                m.put(i, s.charAt(i));
+                cur++;
+            }
+        }
+        return cur > max ? cur: max;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(Solution("tmmzuxt"));
+
     }
 }
