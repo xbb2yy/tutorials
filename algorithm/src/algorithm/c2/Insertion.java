@@ -19,6 +19,7 @@ public class Insertion {
         }
     }
 
+
     public static void main(String[] args) {
         String[] a = {"adf", "fdafas", "erqwr", "ffdsaf", "dfsaf"};
         sort(a);

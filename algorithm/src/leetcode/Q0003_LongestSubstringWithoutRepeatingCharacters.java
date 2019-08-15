@@ -1,7 +1,10 @@
 package leetcode;
 
+import leetcode.common.Pass;
+
 import java.util.*;
 
+@Pass
 public class Q0003_LongestSubstringWithoutRepeatingCharacters {
 
     public int lengthOfLongestSubstring(String s) {
@@ -24,7 +27,7 @@ public class Q0003_LongestSubstringWithoutRepeatingCharacters {
     }
 
 
-    public static int Solution(String s) {
+    public static int solution(String s) {
 
         int max = 0;
         int cur = 0;
@@ -52,8 +55,16 @@ public class Q0003_LongestSubstringWithoutRepeatingCharacters {
         return cur > max ? cur: max;
     }
 
+    public static int solution1(String s) {
+
+        int max = 0;
+        int cur = 0;
+
+        return cur > max ? cur: max;
+    }
+
     public static void main(String[] args) {
-        System.out.println(Solution("tmmzuxt"));
+        System.out.println(solution("tmmzuxt"));
 
     }
 }
