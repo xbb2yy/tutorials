@@ -41,7 +41,7 @@ public class Merge {
     }
 
     public static void main(String[] args) {
-        Integer[] a = {32, 78, 22, 34, 43, 2, 66, 23, 77, 55};
+        Integer[] a = {32, 78, 22}; // , 34, 43, 2, 66, 23, 77, 55
         sort(a);
         assert isSorted(a);
         show(a);
