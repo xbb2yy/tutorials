@@ -24,16 +24,6 @@ public class Shell {
 
     }
 
-    public static void exch(Comparable[] a, int i, int j) {
-        Comparable t = a[i];
-        a[j] = a[i];
-        a[i] = t;
-    }
-
-    public static boolean less(Comparable a, Comparable b) {
-        return a.compareTo(b) < 0;
-    }
-
     public static void main(String[] args) {
         String[] a = {"qadf", "fdafas", "erqwr", "ffdsaf", "dfsaf", "dfsaf", "trwetew", "oqwrew"};
         sort(a);
