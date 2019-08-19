@@ -21,8 +21,9 @@ public class Q0058_LengthofLastWord {
          */
         StringBuilder builder = new StringBuilder();
         for (int i = 0; i < s.length(); i++) {
-            if (s.charAt(s.length() - i - 1) != ' ') {
-                builder.append(s.charAt(s.length() - i - 1));
+            char c = s.charAt(s.length() - i - 1);
+            if (c != ' ') {
+                builder.append(c);
             } else if (builder.length() == 0) {
                 continue;
             } else {
