@@ -34,7 +34,7 @@ public class Q0038_CountandSay {
     }
 
     public static void main(String[] args) {
-        System.out.println(countAndSay(8));
+        System.out.println(countAndSay(440));
     }
 
 }
