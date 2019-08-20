@@ -20,6 +20,10 @@ public class Q0121_BestTimetoBuyandSellStock {
         }
 
         return max;*/
+
+        /**
+         * 买入价格肯定是卖出价格之前的最小值
+         */
         if (prices.length <= 1) {
             return 0;
         }
