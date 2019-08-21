@@ -12,6 +12,6 @@ public class Q0371_SumofTwoIntegers {
     }
 
     public static void main(String[] args) {
-        System.out.println(1 & 1);
+        System.out.println(4 ^ 9);
     }
 }
