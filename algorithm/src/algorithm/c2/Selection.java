@@ -15,7 +15,7 @@ public class Selection {
         show(a);
     }
 
-    // 选择排序
+    // 选择排序 每次选择剩余元素的最小元素
     public static Comparable[] sort(Comparable[] a) {
         int N = a.length;
         for (int i = 0; i < N; i++) {
