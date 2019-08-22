@@ -5,6 +5,9 @@ import leetcode.common.Pass;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 找出数组中两个数字相加等于目标数字
+ */
 @Pass
 public class Q0001_TwoSum {
 
