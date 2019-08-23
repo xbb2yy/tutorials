@@ -1,5 +1,8 @@
 package leetcode;
 
+import leetcode.common.Pass;
+
+@Pass
 public class Q0024_SwapNodesinPairs {
     public static ListNode swapPairs(ListNode head) {
 
