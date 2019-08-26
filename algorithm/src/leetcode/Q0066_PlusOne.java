@@ -1,5 +1,8 @@
 package leetcode;
 
+import leetcode.common.Pass;
+
+@Pass
 public class Q0066_PlusOne {
     public int[] plusOne(int[] digits) {
         digits[digits.length-1]++;
