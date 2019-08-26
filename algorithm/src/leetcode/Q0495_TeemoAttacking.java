@@ -3,7 +3,7 @@ package leetcode;
 import leetcode.common.Pass;
 
 @Pass
-public class Q0_495_TeemoAttacking {
+public class Q0495_TeemoAttacking {
 
     public int findPoisonedDuration(int[] timeSeries, int duration) {
 
