@@ -1,5 +1,8 @@
 package leetcode;
 
+import leetcode.common.Pass;
+
+@Pass
 public class Q0204_CountPrimes {
 
     public static int countPrimes(int n) {
@@ -18,10 +21,8 @@ public class Q0204_CountPrimes {
             }
             if (flag) count++;
         }
-
         return count;
     }
-
 
     public static void main(String[] args) {
         System.out.println(countPrimes(15));
