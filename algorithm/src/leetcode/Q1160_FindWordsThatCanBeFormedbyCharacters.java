@@ -5,6 +5,9 @@ import leetcode.common.Pass;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 统计每个字符的总数，然后循环判断比较
+ */
 @Pass
 public class Q1160_FindWordsThatCanBeFormedbyCharacters {
 

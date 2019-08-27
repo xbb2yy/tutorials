@@ -8,23 +8,22 @@ public class Q0204_CountPrimes {
             return 0;
         }
         int count = 1;
-        for (int i = 3; i < n; i= i + 2){
-
-            for (int j = 2; j < i; j++) {
+        for (int i = 3; i < n; i = i + 2){
+            boolean flag = true;
+            for (int j = 2; j <= Math.sqrt(i); j++) {
                 if (i % j == 0) {
-                    break;
-                }
-                if (j == (i - 1)) {
-                    count++;
+                    flag = false;
                     break;
                 }
             }
+            if (flag) count++;
         }
+
         return count;
     }
 
 
     public static void main(String[] args) {
-        System.out.println(countPrimes(499979));
+        System.out.println(countPrimes(15));
     }
 }
