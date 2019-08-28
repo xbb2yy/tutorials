@@ -1,5 +1,8 @@
 package leetcode;
 
+import leetcode.common.Pass;
+
+@Pass
 public class Q0415_AddStrings {
 
     public static String addStrings(String num1, String num2) {
