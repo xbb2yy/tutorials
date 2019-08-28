@@ -24,6 +24,10 @@ public class Q0204_CountPrimes {
         return count;
     }
 
+    public static int solution(int n) {
+        return 0;
+    }
+
     public static void main(String[] args) {
         System.out.println(countPrimes(15));
     }
