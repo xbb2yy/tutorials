@@ -7,6 +7,13 @@ import java.math.BigInteger;
 @Pass
 public class Q0002_AddTwoNumbers {
 
+    /**
+     * 暴力解法
+     *
+     * @param l1
+     * @param l2
+     * @return
+     */
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 
         StringBuilder s1 = new StringBuilder();
@@ -45,19 +52,49 @@ public class Q0002_AddTwoNumbers {
         return head;
     }
 
+    public static ListNode solution(ListNode l1, ListNode l2) {
+
+        int c = 0;
+        ListNode n = null, prev = null;
+        ListNode t = l1;
+        ListNode k = l2;
+        while (t != null || k != null) {
+            if (t == null) {
+                t = new ListNode(0);
+            }
+            if (k == null) {
+                k = new ListNode(0);
+            }
+            int l = (t.val + k.val + c) % 10;
+            c = (t.val + k.val + c) / 10;
+            ListNode node = new ListNode(l);
+            if (n == null) {
+                n = node;
+                prev = n;
+            } else {
+                prev.next = node;
+                prev = node;
+            }
+            t = t.next;
+            k = k.next;
+        }
+        if (c != 0) {
+            ListNode node = new ListNode(c);
+            prev.next = node;
+        }
+        return n;
+    }
+
     public static void main(String[] args) {
-        ListNode n1 = new ListNode(2);
-        ListNode n2 = new ListNode(4);
-        ListNode n3 = new ListNode(3);
+        ListNode n1 = new ListNode(5);
+        ListNode n2 = new ListNode(8);
+        ListNode n3 = new ListNode(5);
         ListNode n4 = new ListNode(5);
         ListNode n5 = new ListNode(6);
         ListNode n6 = new ListNode(4);
-        n1.next = n2;
-        n2.next = n3;
-        n4.next = n5;
-        n5.next = n6;
+        //  n1.next = n2;
 
-        addTwoNumbers(n1, n4);
+        solution(n1, n3);
 
     }
 }
