@@ -1,5 +1,6 @@
 package leetcode;
 
+import leetcode.common.ListNode;
 import leetcode.common.Pass;
 
 import java.math.BigInteger;

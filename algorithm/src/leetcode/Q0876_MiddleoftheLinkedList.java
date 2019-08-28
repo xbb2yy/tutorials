@@ -1,6 +1,7 @@
 package leetcode;
 
 
+import leetcode.common.ListNode;
 import leetcode.common.Pass;
 
 /**
@@ -33,11 +34,3 @@ public class Q0876_MiddleoftheLinkedList {
 }
 
 
-class ListNode {
-    int val;
-    ListNode next;
-
-    ListNode(int x) {
-        val = x;
-    }
-}

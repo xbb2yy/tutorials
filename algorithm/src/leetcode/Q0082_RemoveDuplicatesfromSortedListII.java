@@ -1,5 +1,7 @@
 package leetcode;
 
+import leetcode.common.ListNode;
+
 public class Q0082_RemoveDuplicatesfromSortedListII {
 
     public static ListNode deleteDuplicates(ListNode head) {
