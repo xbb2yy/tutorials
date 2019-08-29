@@ -23,9 +23,51 @@ public class Q0004_MedianofTwoSortedArrays {
         }
     }
 
+    public static double solution(int[] nums1, int[] nums2) {
+
+        int k = 0, i = 0, j = 0;
+
+        int m = (nums1.length + nums2.length) / 2;
+        int[] t = new int[m + 1];
+
+        while (k < m + 1) {
+            if (nums1.length == 0) {
+                t[k] = nums2[j];
+                j++;
+                k++;
+                continue;
+            }
+            if (nums2.length == 0) {
+                t[k] = nums1[i];
+                i++;
+                k++;
+                continue;
+            }
+            if (j >= nums2.length) {
+                t[k] = nums1[i];
+                i++;
+                k++;
+                continue;
+            }
+            if (i < nums1.length && nums1[i] < nums2[j]) {
+                t[k] = nums1[i];
+                i++;
+            } else {
+                t[k] = nums2[j];
+                j++;
+            }
+            k++;
+        }
+        if ((nums1.length + nums2.length) % 2 == 0) {
+            return (t[m - 1] + t[m]) / 2.0;
+        } else {
+            return t[m];
+        }
+    }
+
     public static void main(String[] args) {
-        int[] a = {1, 2};
-        int[] b = {3, 4};
-        findMedianSortedArrays(a, b);
+        int[] a = {};
+        int[] b = {1};
+        System.out.println(solution(a, b));
     }
 }
