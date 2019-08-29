@@ -26,6 +26,4 @@ public class Q0011_ContainerWithMostWater {
         }
         return max;
     }
-
-
 }
