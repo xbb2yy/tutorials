@@ -1,7 +1,10 @@
 package leetcode;
 
+import leetcode.common.Pass;
+
 import java.util.*;
 
+@Pass
 public class Q0017_LetterCombinationsofaPhoneNumber {
 
     private static Map<Character, List<Character>> map = new HashMap<>();
