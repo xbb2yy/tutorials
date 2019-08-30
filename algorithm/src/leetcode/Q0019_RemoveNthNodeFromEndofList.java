@@ -1,10 +1,12 @@
 package leetcode;
 
 import leetcode.common.ListNode;
+import leetcode.common.Pass;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Pass
 public class Q0019_RemoveNthNodeFromEndofList {
 
 

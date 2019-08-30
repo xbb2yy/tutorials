@@ -1,5 +1,8 @@
 package leetcode;
 
+import leetcode.common.Pass;
+
+@Pass
 public class Q0012_IntegertoRoman {
 
     public static String intToRoman(int num) {

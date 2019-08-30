@@ -1,5 +1,8 @@
 package leetcode;
 
+import leetcode.common.Pass;
+
+@Pass
 public class Q0009_PalindromeNumber {
 
     public static boolean isPalindrome(int x) {

@@ -1,5 +1,8 @@
 package leetcode;
 
+import leetcode.common.Pass;
+
+@Pass
 public class Q0008_StringtoInteger {
 
     public static int myAtoi(String str) {
