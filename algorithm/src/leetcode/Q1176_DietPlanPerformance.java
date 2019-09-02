@@ -1,7 +1,10 @@
 package leetcode;
 
+import leetcode.common.Pass;
+
 import java.util.LinkedList;
 
+@Pass
 public class Q1176_DietPlanPerformance {
 
     public static int dietPlanPerformance(int[] calories, int k, int lower, int upper) {
