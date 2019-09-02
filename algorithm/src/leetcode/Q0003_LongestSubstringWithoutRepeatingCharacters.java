@@ -73,6 +73,6 @@ public class Q0003_LongestSubstringWithoutRepeatingCharacters {
     }
 
     public static void main(String[] args) {
-        solution1("abba");
+        solution1("bc12cdefak2j");
     }
 }
