@@ -33,7 +33,7 @@ public class Q0003_LongestSubstringWithoutRepeatingCharacters {
         int cur = 0;
         Map<Character, Integer> map = new HashMap<>();
         Map<Integer, Character> m = new HashMap<>();
-        for (int i = 0; i < s.length() ; i++) {
+        for (int i = 0; i < s.length(); i++) {
             if (map.containsKey(s.charAt(i))) {
                 if (cur > max) {
                     max = cur;
@@ -52,19 +52,27 @@ public class Q0003_LongestSubstringWithoutRepeatingCharacters {
                 cur++;
             }
         }
-        return cur > max ? cur: max;
+        return cur > max ? cur : max;
     }
 
     public static int solution1(String s) {
 
+        if (s == null || s.length() == 0) {
+            return 0;
+        }
+        Map<Character, Integer> map = new HashMap<>();
         int max = 0;
-        int cur = 0;
-
-        return cur > max ? cur: max;
+        for (int i = 0, j = 0; j < s.length(); j++) {
+            if (map.containsKey(s.charAt(j))) {
+                i = Math.max(map.get(s.charAt(j)), i);
+            }
+            max = Math.max(max, j - i + 1);
+            map.put(s.charAt(j), j + 1);
+        }
+        return max;
     }
 
     public static void main(String[] args) {
-        System.out.println(solution("tmmzuxt"));
-
+        solution1("abba");
     }
 }
