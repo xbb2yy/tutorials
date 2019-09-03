@@ -7,13 +7,11 @@ import java.util.List;
 
 public class Q0501_FindModeinBinarySearchTree {
 
-
-    static int max = 0;
-    static int count = 0;
+    int max = 0, count = 0;
 
     static Integer prev = null;
 
-    public static int[] findMode(TreeNode root) {
+    public  int[] findMode(TreeNode root) {
 
         List<Integer> list = new ArrayList<>();
         solution(root, list);
@@ -24,7 +22,7 @@ public class Q0501_FindModeinBinarySearchTree {
         return ints;
     }
 
-    public static void solution(TreeNode node, List<Integer> list) {
+    public void solution(TreeNode node, List<Integer> list) {
         if (node == null) {
             return;
         }
@@ -64,6 +62,6 @@ public class Q0501_FindModeinBinarySearchTree {
         t1.right = t2;
         t2.left = t3;*/
 
-        findMode(t1);
+   //     findMode(t1);
     }
 }
