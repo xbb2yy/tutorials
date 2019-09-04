@@ -4,6 +4,9 @@ import leetcode.common.Pass;
 
 import java.util.*;
 
+/**
+ * 最长的无重复子串
+ */
 @Pass
 public class Q0003_LongestSubstringWithoutRepeatingCharacters {
 
