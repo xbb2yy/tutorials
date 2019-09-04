@@ -1,5 +1,6 @@
 package leetcode;
 
+
 import leetcode.common.Pass;
 
 @Pass
