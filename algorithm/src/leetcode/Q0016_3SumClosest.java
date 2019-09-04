@@ -1,30 +1,23 @@
 package leetcode;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Q0016_3SumClosest {
 
     public int threeSumClosest(int[] nums, int target) {
-        List<Integer> list = new ArrayList<>();
-        int N = nums.length;
+
+        int min = Integer.MAX_VALUE, sum = 0, N = nums.length;
         for (int i = 0; i < N; i++) {
             for (int j = i + 1; j < N; j++) {
                 for (int k = j + 1; k < N; k++) {
-                    list.add(nums[i] + nums[j] + nums[k]);
+                    if (Math.abs((target - (nums[i] + nums[j] + nums[k]))) < min) {
+                        min = Math.abs((target - (nums[i] + nums[j] + nums[k])));
+                        sum = nums[i] + nums[j] + nums[k];
+                        if (min == 0) {
+                            return sum;
+                        }
+                    }
                 }
             }
         }
-        list.sort(Integer::compareTo);
-        int min = Integer.MAX_VALUE;
-        int result = 0;
-        for (Integer i : list) {
-            if (Math.abs(i - target) <= min) {
-                min = Math.abs(i - target);
-                result = i;
-            }
-
-        }
-        return result;
+        return sum;
     }
 }
