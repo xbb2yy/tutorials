@@ -6,6 +6,9 @@ public class Q0283_MoveZeroes {
 
         int k = 1;
         for (int i = 0; i < nums.length; i++) {
+            if (k > nums.length) {
+                break;
+            }
             if (nums[i] == 0) {
                 for (int j = k; j < nums.length; j++) {
                     if (nums[j] != 0) {
@@ -20,9 +23,13 @@ public class Q0283_MoveZeroes {
             }
         }
     }
+    public static void solution(int[] nums) {
+
+
+    }
 
     public static void main(String[] args) {
-        int[] a = {4,2,4,0,0,3,0,5,1,0};
+        int[] a = {4,2,4,0,2,3,1,5,1,0};
         moveZeroes(a);
     }
 }
