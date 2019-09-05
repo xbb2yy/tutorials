@@ -7,7 +7,11 @@ public class Q0069_Sqrt {
 
     public static int mySqrt(int x) {
         if (x == 0 || x == 1) {
+<<<<<<< HEAD
             return x;
+=======
+            return 0;
+>>>>>>> f031d0f6f49c153841f88885c65b0d20ad645871
         }
 
         int ans = x / 2;
