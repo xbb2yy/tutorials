@@ -2,14 +2,17 @@ package leetcode;
 
 public class Q0029_DivideTwoIntegers {
 
-    public int divide(int dividend, int divisor) {
+    public static int divide(int dividend, int divisor) {
+
 
         int ans = 0;
-        while (dividend >= divisor) {
-            dividend -= divisor;
-            ans++;
-        }
+        while (ans < Math.abs(dividend)) {
 
-        return ans;
+        }
+        return 0;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(3 << 1 <<1);
     }
 }
