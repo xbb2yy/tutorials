@@ -6,7 +6,6 @@ import leetcode.common.Pass;
 @Pass
 public class Q0092_ReverseLinkedListII {
 
-
     public ListNode reverseBetween(ListNode head, int m, int n) {
         if (m == n) {
             return head;
