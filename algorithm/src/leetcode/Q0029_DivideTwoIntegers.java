@@ -4,15 +4,18 @@ public class Q0029_DivideTwoIntegers {
 
     public static int divide(int dividend, int divisor) {
 
+        int a = Math.abs(dividend);
+        int b = Math.abs(divisor);
 
-        int ans = 0;
-        while (ans < Math.abs(dividend)) {
+        int start = 0, end = dividend;
+
+        while (start < end) {
 
         }
         return 0;
     }
 
     public static void main(String[] args) {
-        System.out.println(3 << 1 <<1);
+        System.out.println(-4 / 3);
     }
 }
