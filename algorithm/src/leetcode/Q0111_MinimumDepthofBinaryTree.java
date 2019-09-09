@@ -23,6 +23,4 @@ public class Q0111_MinimumDepthofBinaryTree {
             help(root.right, depth + 1);
         }
     }
-
-
 }
