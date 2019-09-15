@@ -65,6 +65,25 @@ public class Q0004_MedianofTwoSortedArrays {
         }
     }
 
+    public double solution2(int[] nums1, int[] nums2) {
+
+        int m = nums1.length;
+        int n = nums2.length;
+
+        int[] merge = new int[m + n];
+        System.arraycopy(nums1, 0, merge, 0, m);
+        System.arraycopy(nums2, 0, merge, m, n);
+
+        Arrays.sort(merge);
+
+        if (((m + n) & 1) == 1) {
+            return merge[(m + n - 1) >>> 1];
+        } else {
+            return (double) (merge[(m + n - 1) >>> 1] + merge[(m + n) >>> 1]) / 2;
+        }
+    }
+
+
     public static void main(String[] args) {
         int[] a = {};
         int[] b = {1};
