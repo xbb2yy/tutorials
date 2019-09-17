@@ -40,4 +40,27 @@ public class Q1189_MaximumNumberofBalloons {
         }
         return min;
     }
+
+    public int solution(String text) {
+        Map<Character, Integer> map = new HashMap<>();
+        map.put('b', 20000);
+        map.put('a', 20000);
+        map.put('l', 20000);
+        map.put('o', 20000);
+        map.put('n', 20000);
+
+        char[] chars = text.toCharArray();
+        for (int i = 0; i < text.length(); i++) {
+            map.compute(chars[i], (k, v) -> {
+                if (v != null) {
+                    if (k == 'l' || k == 'o') {
+                        return v - 1;
+                    }
+                    return v - 2;
+                }
+                return null;
+            });
+        }
+        return (20000 - map.values().stream().max(Integer::compareTo).get()) / 2;
+    }
 }
