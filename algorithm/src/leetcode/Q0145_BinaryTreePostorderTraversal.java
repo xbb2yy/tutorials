@@ -5,7 +5,7 @@ import leetcode.common.TreeNode;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Q_0145_BinaryTreePostorderTraversal {
+public class Q0145_BinaryTreePostorderTraversal {
 
     private List<Integer> list = new ArrayList<>();
     public List<Integer> postorderTraversal(TreeNode root) {

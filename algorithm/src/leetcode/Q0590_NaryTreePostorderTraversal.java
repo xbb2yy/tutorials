@@ -5,7 +5,7 @@ import leetcode.common.Node;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Q_590_NaryTreePostorderTraversal {
+public class Q0590_NaryTreePostorderTraversal {
 
     List<Integer> list = new ArrayList<>();
     public List<Integer> postorder(Node root) {
