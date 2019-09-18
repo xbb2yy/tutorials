@@ -2,7 +2,7 @@ package leetcode;
 
 import java.util.Arrays;
 
-public class Q239_SlidingWindowMaximum {
+public class Q0239_SlidingWindowMaximum {
 
 
     public static int[] maxSlidingWindow(int[] nums, int k) {
