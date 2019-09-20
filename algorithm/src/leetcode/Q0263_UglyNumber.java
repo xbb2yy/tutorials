@@ -21,6 +21,11 @@ public class Q0263_UglyNumber {
         return false;
     }
 
+    /**
+     * 非递归速度更快
+     * @param num
+     * @return
+     */
     public boolean solution(int num) {
         if (num <= 0) {
             return false;
