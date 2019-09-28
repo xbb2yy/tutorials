@@ -7,7 +7,7 @@
           class="com.xubing.bean.Dog" >
         <property
                 name="name"
-                value="dog tom"/>
+                value="dog tom" />
     </bean>
 
 </beans>
