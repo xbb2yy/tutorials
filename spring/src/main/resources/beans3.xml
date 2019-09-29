@@ -10,4 +10,7 @@
                 value="dog tom" />
     </bean>
 
+
+    <bean class="com.xubing.MyBeanPostProcessor"></bean>
+
 </beans>
