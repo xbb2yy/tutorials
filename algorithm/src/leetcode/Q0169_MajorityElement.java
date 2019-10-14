@@ -1,8 +1,11 @@
 package leetcode;
 
+import leetcode.common.Pass;
+
 import java.util.HashMap;
 import java.util.Map;
 
+@Pass
 public class Q0169_MajorityElement {
 
     public static int majorityElement(int[] nums) {
