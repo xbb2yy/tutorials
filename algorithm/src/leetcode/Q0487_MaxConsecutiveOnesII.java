@@ -9,14 +9,9 @@ package leetcode;
 public class Q0487_MaxConsecutiveOnesII {
 
     public int findMaxConsecutiveOnes(int[] nums) {
-        int count = 0, max = 0;
-        boolean flag = false;
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] == 1) {
-                count++;
-            } else {
+        int start = 0, end = nums.length - 1;
+        while (end >= start) {
 
-            }
         }
         return -1;
     }
