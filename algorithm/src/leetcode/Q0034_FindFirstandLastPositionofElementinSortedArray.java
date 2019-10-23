@@ -1,5 +1,8 @@
 package leetcode;
 
+import leetcode.common.Pass;
+
+@Pass
 public class Q0034_FindFirstandLastPositionofElementinSortedArray {
 
     public int[] searchRange(int[] nums, int target) {
@@ -20,6 +23,21 @@ public class Q0034_FindFirstandLastPositionofElementinSortedArray {
             }
             if (nums[mid] < target) {
                 lo = mid + 1;
+            }
+        }
+        return a;
+    }
+
+    public int[] solution(int[] nums, int target) {
+
+        int[] a = {-1, -1};
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == target && a[0] == -1) {
+                a[0] = i;
+                a[1] = i;
+            }
+            if (nums[i] == target && a[0] != -1) {
+                a[1] = i;
             }
         }
         return a;
