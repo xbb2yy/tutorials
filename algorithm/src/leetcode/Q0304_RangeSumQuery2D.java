@@ -1,10 +1,9 @@
 package leetcode;
 
-import java.util.concurrent.ForkJoinPool;
-
 public class Q0304_RangeSumQuery2D {
 
-    private  int[][] a;
+    private int[][] a;
+
     public Q0304_RangeSumQuery2D(int[][] matrix) {
         a = matrix;
     }
