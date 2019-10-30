@@ -5,7 +5,10 @@ import java.util.Arrays;
 public class Q0048_RotateImage {
 
     public void rotate(int[][] matrix) {
+        int n = matrix.length;
+        for (int i = 0; i < n; i++) {
 
+        }
     }
 
     public static void main(String[] args) {
