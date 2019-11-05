@@ -2,6 +2,8 @@ package leetcode;
 
 import leetcode.common.Pass;
 
+import java.util.Arrays;
+
 @Pass
 public class Q0204_CountPrimes {
 
@@ -25,7 +27,20 @@ public class Q0204_CountPrimes {
     }
 
     public static int solution(int n) {
-        return 0;
+        boolean[] isPrimes = new boolean[n];
+        Arrays.fill(isPrimes, true);
+
+        for (int i = 2; i * i< n; i++) {
+            for (int j = i * i; j < n; j+=i) {
+                if (isPrimes[i]) isPrimes[j] = false;
+            }
+        }
+
+        int count = 0;
+        for (int i = 2; i < n; i++) {
+            if (isPrimes[i]) count++;
+        }
+        return count;
     }
 
     public static void main(String[] args) {
