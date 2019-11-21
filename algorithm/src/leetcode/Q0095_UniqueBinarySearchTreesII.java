@@ -7,42 +7,66 @@ import java.util.List;
 
 public class Q0095_UniqueBinarySearchTreesII {
 
+    private List<TreeNode> ans = new ArrayList<>();
+
     public List<TreeNode> generateTrees(int n) {
-        List<TreeNode> list = new ArrayList<>();
-        List<Integer> ints = new ArrayList<>();
-        for (int i = 1; i <= n; i++) {
-            ints.add(i);
+
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            list.add(i + 1);
         }
-        generate(list, ints);
-        return list;
+        help(null, list);
+        return ans;
     }
 
-    public void generate(List<TreeNode> list, List<Integer> ints) {
+    private void help(TreeNode root, List<Integer> list) {
         if (list.size() == 0) {
-            for (Integer anInt : ints) {
-//                list.add(new TreeNode())
-            }
-        }
-    }
-
-
-    private void help(TreeNode root, int n) {
-        if (root.val == n) {
+            ans.add(root);
             return;
         }
+        for (int i = 0; i < list.size(); i++) {
+            Integer integer = list.get(i);
+            TreeNode gen = gen(root, integer);
+            ArrayList<Integer> integers = new ArrayList<>(list);
+            integers.remove(i);
+            help(gen, integers);
+        }
+    }
+
+    private TreeNode gen(TreeNode root, int n) {
+        if (root == null) {
+            return new TreeNode(n);
+        } else {
+            TreeNode newNode = new TreeNode(root.val);
+            newNode.left = root.left;
+            newNode.right = root.right;
+            add(newNode, n);
+            return newNode;
+        }
+    }
+
+    private void add(TreeNode root, int n) {
         if (n > root.val) {
             if (root.right == null) {
-                root.right = new TreeNode(n);
+                TreeNode node = new TreeNode(n);
+                root.right = node;
             } else {
-                help(root.right, n);
+                add(root.right, n);
             }
         }
         if (n < root.val) {
             if (root.left == null) {
-                root.left = new TreeNode(n);
+                TreeNode node = new TreeNode(n);
+                root.left = node;
             } else {
-                help(root.left, n);
+                add(root.left, n);
             }
         }
+    }
+
+    public static void main(String[] args) {
+        Q0095_UniqueBinarySearchTreesII q = new Q0095_UniqueBinarySearchTreesII();
+        q.generateTrees(3);
+        System.out.println(q.ans);
     }
 }
