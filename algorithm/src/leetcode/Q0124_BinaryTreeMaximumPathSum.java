@@ -1,7 +1,9 @@
 package leetcode;
 
+import leetcode.common.Pass;
 import leetcode.common.TreeNode;
 
+@Pass
 public class Q0124_BinaryTreeMaximumPathSum {
     int max = Integer.MIN_VALUE;
 
