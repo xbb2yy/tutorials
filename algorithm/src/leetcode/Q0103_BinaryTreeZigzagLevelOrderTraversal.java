@@ -4,6 +4,7 @@ import leetcode.common.Pass;
 import leetcode.common.TreeNode;
 
 import java.util.*;
+
 @Pass
 public class Q0103_BinaryTreeZigzagLevelOrderTraversal {
 
@@ -16,6 +17,7 @@ public class Q0103_BinaryTreeZigzagLevelOrderTraversal {
         boolean fromLeft = true;
         while (queue.peek() != null) {
             LinkedList<Integer> level = new LinkedList<>();
+            // 先获取队列当前的长度，然后遍历，是关键
             int size = queue.size();
             for (int i = 0; i < size; i++) {
                 TreeNode poll = queue.poll();
