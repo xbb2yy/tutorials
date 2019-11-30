@@ -1,8 +1,11 @@
 package leetcode;
 
+import leetcode.common.Pass;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Pass
 public class Q0438_FindAllAnagramsinaString {
 
     public static List<Integer> findAnagrams(String s, String p) {
@@ -32,8 +35,6 @@ public class Q0438_FindAllAnagramsinaString {
                 a[s.charAt(l)] = a[s.charAt(l++)] - 1;
                 a[s.charAt(r + 1)] = a[s.charAt(++r)] + 1;
             } else{ break;}
-
-
         }
         return ans;
     }
