@@ -2,7 +2,10 @@ package leetcode;
 
 import leetcode.common.Pass;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * 最长的无重复子串
@@ -72,6 +75,22 @@ public class Q0003_LongestSubstringWithoutRepeatingCharacters {
             }
             ans = Math.max(ans, i - start + 1);
             map.put(s.charAt(i), i + 1);
+        }
+        return ans;
+    }
+
+    public int lengthOfLongestSubstring2(String s) {
+        int[] freq = new int[256];
+        int l = 0, r = -1;
+        int ans = 0;
+        while (l < s.length()) {
+            if (r + 1 < s.length() && freq[s.charAt(r + 1)] == 0) {
+                r++;
+                freq[s.charAt(r)] = 1;
+            } else {
+                freq[s.charAt(++l)] = 0;
+            }
+            ans = Math.max(ans, r - l + 1);
         }
         return ans;
     }
