@@ -16,6 +16,16 @@ public class Merge {
     }
 
     private static void merge(int[] nums, int start, int end) {
+        int mid = start + (end - start) / 2;
+        int[] tmp = new int[end - start + 1];
+        for (int i = start; i <= end; i++) {
+            tmp[i - start] = nums[i];
+        }
+        int i = start, k = mid + 1;
+        for (int j = start; j <= end; j++) {
+            if (nums[i] < nums[k]) {
+            }
+        }
     }
 
     public static void main(String[] args) {
