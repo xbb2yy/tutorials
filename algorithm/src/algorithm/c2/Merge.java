@@ -1,6 +1,8 @@
 package algorithm.c2;
 
 
+import java.util.Arrays;
+
 public class Merge {
 
     public static void sort(int[] nums) {
@@ -21,15 +23,28 @@ public class Merge {
         for (int i = start; i <= end; i++) {
             tmp[i - start] = nums[i];
         }
-        int i = start, k = mid + 1;
-        for (int j = start; j <= end; j++) {
-            if (nums[i] < nums[k]) {
+
+        int m = 0, n = mid - start + 1;
+        for (int i = 0; i < tmp.length; i++) {
+            if (n >= tmp.length) {
+                nums[start + i] = tmp[m];
+                m++;
+            } else if (m >  mid - start) {
+                nums[start + i] = tmp[n];
+                n++;
+            } else if (tmp[m] < tmp[n]) {
+                nums[start + i] = tmp[m];
+                m++;
+            } else {
+                nums[start + i] = tmp[n];
+                n++;
             }
         }
     }
 
     public static void main(String[] args) {
-        int[] a = {32, 78, 22}; // , 34, 43, 2, 66, 23, 77, 55
+        int[] a = {32, 78, 22, 56, 45, 67, 23, 45, 56}; // , 34, 43, 2, 66, 23, 77, 55
         sort(a);
+        System.out.println(Arrays.toString(a));
     }
 }
