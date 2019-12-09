@@ -1,5 +1,7 @@
 package algorithm.c2;
 
+import java.util.Arrays;
+
 public class Quick {
     
     public static void sort(int[] nums) {
@@ -17,23 +19,28 @@ public class Quick {
     }
 
     private static int quick(int[] nums, int start, int end) {
-        int  k = end;
-        int i = start + 1;
-        for (; i <= k; ) {
-            if (nums[i] < nums[start]) {
+        int i = start;
+        int k = end;
+        for (int j = start + 1; j <= k;) {
+            if (nums[j] < nums[start]) {
                 i++;
+                j++;
             } else {
-                int tmp = nums[i];
-                nums[i] = nums[end];
-                nums[end] = tmp;
+                int tmp = nums[j];
+                nums[j] = nums[k];
+                nums[k] = tmp;
                 k--;
             }
         }
-        return i + 1;
+        int tmp = nums[start];
+        nums[start] = nums[i];
+        nums[i] = tmp;
+        return i;
     }
 
     public static void main(String[] args) {
-        int[] nums = {5, 4,  7, 2, 3, 5};
-        System.out.println(quick(nums, 0, 5));
+        int[] nums = {5, 4,9, 2,  7, 2, 3, 5, 3354,4, 34214,2};
+        sort(nums);
+        System.out.println(Arrays.toString(nums));
     }
 }
