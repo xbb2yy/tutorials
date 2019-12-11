@@ -2,6 +2,8 @@ package leetcode;
 
 import leetcode.common.Pass;
 
+import java.util.Arrays;
+
 @Pass
 public class Q0088_MergeSortedArray {
 
@@ -42,9 +44,29 @@ public class Q0088_MergeSortedArray {
         }
     }
 
+
+    public static void solution(int[] nums1, int m, int[] nums2, int n) {
+
+        int t = m;
+        for (int i = 0; i < n; i++) {
+            nums1[t] = nums2[i];
+            for(int k = t; t > 0; k--) {
+                if (nums1[k] < nums1[k - 1]) {
+                    int tmp = nums1[k];
+                    nums1[k] = nums1[k - 1];
+                    nums1[k - 1] = tmp;
+                } else {
+                    break;
+                }
+            }
+            t++;
+        }
+    }
+
     public static void main(String[] args) {
-        int[] a = {};
-        int[] b = {1};
-        merge(a, 0, b, 1);
+        int[] a = {1,2,3,0,0,0};
+        int[] b = {2, 5, 6};
+        solution(a, 3, b, 3);
+        System.out.println(Arrays.toString(a));
     }
 }

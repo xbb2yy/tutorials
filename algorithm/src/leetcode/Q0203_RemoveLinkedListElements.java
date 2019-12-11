@@ -26,6 +26,20 @@ public class Q0203_RemoveLinkedListElements {
         return node;
     }
 
+    public static ListNode solution(ListNode head, int val) {
+        ListNode ghost = new ListNode(0);
+        ghost.next = head;
+        ListNode cur = ghost;
+        while (cur.next != null) {
+            if (cur.next.val == val) {
+                cur.next = cur.next.next;
+            } else {
+                cur = cur.next;
+            }
+        }
+        return ghost.next;
+    }
+
     public static void main(String[] args) {
         ListNode node1 = new ListNode(1);
         ListNode node2 = new ListNode(1);

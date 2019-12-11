@@ -1,51 +1,50 @@
 package algorithm.c2;
 
 
-import static algorithm.c2.Example.*;
+import java.util.Arrays;
 
 public class Merge {
 
-    private static Comparable[] aux;
-
-    public static void sort(Comparable[] a) {
-        aux = new Comparable[a.length];
-        sort(a, 0, a.length - 1);
+    public static void sort(int[] nums) {
+        sort(nums, 0, nums.length - 1);
     }
 
-    private static void sort(Comparable[] a, int lo, int hi) {
-        if (hi <= lo)
-            return;
-        int mid = lo + (hi - lo) / 2;
-        sort(a, lo, mid);
-        sort(a, mid + 1, hi);
-        merge(a, lo, mid, hi);
+    private static void sort(int[] nums, int start, int end) {
+        if (start >= end) return;
+        int mid = start + (end - start) / 2;
+        sort(nums, start, mid);
+        sort(nums, mid + 1, end); 
+        merge(nums, start, end);
     }
 
-    public static void merge(Comparable[] a, int lo, int mid, int hi) {
-        int i = lo;
-        int j = mid + 1;
-        for (int k = lo; k <= hi; k++) {
-            aux[k] = a[k];
+    private static void merge(int[] nums, int start, int end) {
+        int mid = start + (end - start) / 2;
+        int[] tmp = new int[end - start + 1];
+        for (int i = start; i <= end; i++) {
+            tmp[i - start] = nums[i];
         }
 
-        for (int k = lo; k <= hi; k++) {
-            if (i > mid)
-                a[k] = aux[j++];
-            else if (j > hi)
-                a[k] = aux[i++];
-            else if (less(aux[j], aux[i]))
-                a[k] = aux[j++];
-            else
-                a[k] = aux[i++];
+        int m = 0, n = mid - start + 1;
+        for (int i = 0; i < tmp.length; i++) {
+            if (n >= tmp.length) {
+                nums[start + i] = tmp[m];
+                m++;
+            } else if (m >  mid - start) {
+                nums[start + i] = tmp[n];
+                n++;
+            } else if (tmp[m] < tmp[n]) {
+                nums[start + i] = tmp[m];
+                m++;
+            } else {
+                nums[start + i] = tmp[n];
+                n++;
+            }
         }
     }
 
     public static void main(String[] args) {
-        Integer[] a = {32, 78, 22}; // , 34, 43, 2, 66, 23, 77, 55
+        int[] a = {32, 78, 22, 56, 45, 67, 23, 45, 56}; // , 34, 43, 2, 66, 23, 77, 55
         sort(a);
-        assert isSorted(a);
-        show(a);
+        System.out.println(Arrays.toString(a));
     }
-
-
 }

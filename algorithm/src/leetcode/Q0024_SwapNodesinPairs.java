@@ -38,10 +38,7 @@ public class Q0024_SwapNodesinPairs {
     public static void main(String[] args) {
         ListNode l1 = new ListNode(1);
         ListNode l2 = new ListNode(2);
-
         l1.next = l2;
-
-
         swapPairs(l1);
 
     }

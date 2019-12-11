@@ -1,41 +1,37 @@
 package leetcode;
 
+import leetcode.common.Pass;
 import leetcode.common.TreeNode;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
+@Pass
 public class Q0637_AverageofLevelsinBinaryTree {
 
     private List<List<Integer>> list = new ArrayList<>();
 
     public List<Double> averageOfLevels(TreeNode root) {
-        help(root, 0);
-        List<Double> l = new ArrayList<>();
-        for (int i = 0; i < list.size(); i++) {
-            List<Integer> lst = this.list.get(i);
-            double avg = 0;
-            for (int j = 0; j < lst.size(); j++) {
-                avg += lst.get(j) / lst.size();
+        List<Double> ans = new LinkedList<>();
+        Queue<TreeNode> queue = new LinkedList<>();
+        if (root == null)
+            return ans;
+        queue.add(root);
+
+        while (queue.size() != 0) {
+            int size = queue.size();
+            double sum = 0;
+            for (int i = 0; i < size; i++) {
+                TreeNode poll = queue.poll();
+                if (poll.left != null) queue.add(poll.left);
+                if (poll.right != null) queue.add(poll.right);
+                sum += poll.val;
             }
-            l.add(avg);
+            ans.add(sum / size);
         }
-        return l;
+        return ans;
     }
 
-    private void help(TreeNode node, int n) {
-        if (node == null) {
-            return;
-        }
-        List<Integer> ints;
-        if (list.size() < n + 1) {
-            ints = new ArrayList<>();
-            list.add(ints);
-        } else {
-            ints = list.get(n);
-        }
-        ints.add(node.val);
-        help(node.left, n + 1);
-        help(node.right, n + 1);
-    }
 }

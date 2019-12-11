@@ -19,6 +19,22 @@ public class StringTest {
     }
 
     @Test
+    public void testEquals() {
+        String a = "abc";
+        String b = "abc";
+        System.out.println(a == b);
+
+        String c = new String("abc");
+        System.out.println(a == c);
+
+        String intern = c.intern();
+        System.out.println(intern == a);
+
+        String dd = new String("deeeed");
+        System.out.println(dd.intern() == dd);
+    }
+
+    @Test
     public void testSub() {
         String str = "123456789340827199009262713";
         System.out.println(str.substring(9));

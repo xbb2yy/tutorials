@@ -1,5 +1,7 @@
 package leetcode;
 
+import java.util.LinkedList;
+
 /**
  * Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
  *
@@ -64,5 +66,30 @@ public class Q0155_MinStack {
         }
 
         return min;
+    }
+}
+
+class MinStack {
+
+    private LinkedList<Integer> list = new LinkedList<>();
+    /** initialize your data structure here. */
+    public MinStack() {
+
+    }
+
+    public void push(int x) {
+       list.addLast(x);
+    }
+
+    public void pop() {
+        list.removeLast();
+    }
+
+    public int top() {
+        return list.getLast();
+    }
+
+    public int getMin() {
+       return list.stream().min(Integer::compareTo).get();
     }
 }
