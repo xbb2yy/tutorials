@@ -20,7 +20,8 @@
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
-            <version>4.1.25.Final</version>
+    dependabot/maven/read/io.netty-netty-all-4.1.42.Final
+            <version>4.1.42.Final</version>
         </dependency>
 
     </dependencies>
