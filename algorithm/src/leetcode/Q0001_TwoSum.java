@@ -22,7 +22,6 @@ public class Q0001_TwoSum {
                 }
             }
         }
-
         return a;
     }
 
