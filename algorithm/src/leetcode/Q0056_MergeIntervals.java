@@ -1,6 +1,8 @@
 package leetcode;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 public class Q0056_MergeIntervals {
@@ -41,8 +43,30 @@ public class Q0056_MergeIntervals {
         return r;
     }
 
+    public static int[][] solution(int[][] intervals) {
+        if (intervals.length == 0)
+            return new int[0][2];
+        Arrays.sort(intervals, Comparator.comparing(ints -> ints[0]));
+        int start = intervals[0][0], end = intervals[0][1];
+        int[][] ans = new int[intervals.length][2];
+        int index = 0;
+        for (int i = 1; i < intervals.length; i++) {
+            if (intervals[i][0] > end) {
+                int[] a = {start, end};
+                ans[index++] = a;
+                start = intervals[i][0];
+            }
+            if (intervals[i][1] > end) end = intervals[i][1];
+        }
+        int[] last = {start, end};
+        ans[index++] = last;
+        int[][] a = new int[index][2];
+        System.arraycopy(ans, 0, a, 0, a.length);
+        return a;
+    }
+
     public static void main(String[] args) {
-        int[][] a = {{1,3},{2,6},{8,10},{15,18}};
-        merge(a);
+        int[][] a = {{2, 6}, {8, 10}, {15, 18}, {1, 3}};
+        solution(a);
     }
 }
