@@ -13,7 +13,12 @@ public class Q0091_DecodeWays {
         for (int i = 1; i < s.length(); i++) {
             if (s.charAt(i) == '0') {
                 if (s.charAt(i - 1) == '1' || s.charAt(i - 1) == '2') {
-                    dp[i] = dp[i - 1];
+
+                    if (i - 2 >= 0 && (s.charAt(i - 2) == '1' || s.charAt(i - 2) == '2')) {
+                        dp[i] = dp[i - 1] - 1;
+                    } else {
+                        dp[i] = dp[i - 1];
+                    }
                 } else {
                     return 0;
                 }
@@ -29,6 +34,6 @@ public class Q0091_DecodeWays {
     }
 
     public static void main(String[] args) {
-        System.out.println(numDecodings("10"));
+        System.out.println(numDecodings("110"));
     }
 }

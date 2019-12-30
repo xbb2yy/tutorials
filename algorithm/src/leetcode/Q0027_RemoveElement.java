@@ -38,7 +38,7 @@ public class Q0027_RemoveElement {
 
     public static int solution(int[] nums, int val) {
 
-        int start =0, end = nums.length - 1;
+        int start = 0, end = nums.length - 1;
 
         while (start <= end) {
             if (nums[start] == val) {
