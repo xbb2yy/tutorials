@@ -11,6 +11,7 @@ public class Q0010_RegularExpressionMatching {
                     (match && isMatch(s.substring(1), p)));
 
         } else {
+
             return match && isMatch(s.substring(1), p.substring(1));
         }
     }
