@@ -1,75 +1,87 @@
 package com.xubing.thread;
 
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+
 /**
  * @author xubingbing xbbjava@163.com
  * @date 2018/8/28 17:58
  */
 public class PrintABC {
+    private static int i = 1;
+    private static int flag = 1;
 
-    private static volatile int flag = 1;
-    private static volatile int count = 0;
-
-    public static void main(String[] args) {
-        print();
-    }
-
-    public static void print() {
-        new Thread(() -> {
-            for (; count < 10;) {
+    static class Print implements Runnable{
+        @Override
+        public void run() {
+            for (; ;) {
                 synchronized (PrintABC.class) {
-
-                    if (flag == 1) {
-                        System.out.println(Thread.currentThread().getName());
+                    if (flag == 1 && i <= 10) {
+                        System.out.println(i);
+                        System.out.println("A");
                         flag = 2;
+                        i++;
                         PrintABC.class.notifyAll();
                     } else {
                         try {
                             PrintABC.class.wait();
-                        } catch (Exception e) {
-
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
                         }
                     }
                 }
             }
+        }
+    }
 
-        }, "A").start();
-
-        new Thread(() -> {
-            for (; count < 10;) {
+    static class PrintB implements Runnable{
+        @Override
+        public void run() {
+            for (; ;) {
                 synchronized (PrintABC.class) {
-                    if (flag == 2) {
-                        System.out.println(Thread.currentThread().getName());
+                    if (flag == 2 && i <= 11) {
+                        System.out.println("B");
                         flag = 3;
                         PrintABC.class.notifyAll();
                     } else {
                         try {
                             PrintABC.class.wait();
-                        } catch (Exception e) {
-
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
                         }
                     }
                 }
             }
-        }, "B").start();
+        }
+    }
 
-        new Thread(() -> {
-            for (; count < 10;) {
+    static class PrintC implements Runnable{
+        @Override
+        public void run() {
+            for (; ;) {
                 synchronized (PrintABC.class) {
-                    if (flag == 3) {
-                        count++;
-                        System.out.println(Thread.currentThread().getName());
-                        System.out.println(count);
+                    if (flag == 3 && i <= 11) {
+                        System.out.println("C");
                         flag = 1;
                         PrintABC.class.notifyAll();
                     } else {
                         try {
                             PrintABC.class.wait();
-                        } catch (Exception e) {
-
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
                         }
                     }
                 }
             }
-        }, "C").start();
+        }
+    }
+
+    public static void main(String[] args) {
+        ThreadPoolExecutor pool = new ThreadPoolExecutor(3, 3, 0, TimeUnit.DAYS, new ArrayBlockingQueue(1));
+        pool.execute(new Print());
+        pool.execute(new PrintB());
+        pool.execute(new PrintC());
     }
 }
+
