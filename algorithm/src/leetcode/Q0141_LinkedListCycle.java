@@ -27,6 +27,19 @@ public class Q0141_LinkedListCycle {
 
     }
 
+    public static boolean solution(ListNode head) {
+        ListNode one = head;
+        ListNode two = head;
+
+        while (one != null && two != null) {
+            one = one.next;
+            if (two.next == null) return false;
+            two = two.next.next;
+            if (one == two) return true;
+        }
+        return false;
+    }
+
     public static void main(String[] args) {
        /* ListNode node1 = new ListNode(3);
         ListNode node2 = new ListNode(2);
