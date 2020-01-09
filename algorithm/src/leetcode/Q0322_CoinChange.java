@@ -1,30 +1,28 @@
 package leetcode;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Q0322_CoinChange {
 
-    List<Integer> list = new ArrayList<>();
+    static int min = Integer.MAX_VALUE;
 
-    public int coinChange(int[] coins, int amount) {
-        coinChange(coins, amount, 0);
-        return list.stream().min(Integer::compareTo).get();
+    public static int coinChange(int[] coins, int amount) {
+        change(coins, amount, 0);
+        return min == Integer.MAX_VALUE ? -1 : min;
     }
 
-    public void coinChange(int[] coins, int amout, int times) {
+    public static void change(int[] coins, int amount, int count) {
+        if (amount < 0) return;
+        if (amount == 0) {
+            min = Math.min(min, count);
+            return;
+        }
+
         for (int i = 0; i < coins.length; i++) {
-            if (coins[i] == amout) {
-                list.add(++times);
-            } else {
-                if (coins[i] < amout) {
-                    coinChange(coins, amout - coins[i], ++times);
-                }
-            }
+            change(coins, amount - coins[i], ++count);
         }
     }
 
     public static void main(String[] args) {
-
+        int[] coins = {1, 2, 5};
+        System.out.println(coinChange(coins, 11));
     }
 }
