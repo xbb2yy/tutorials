@@ -47,9 +47,9 @@ class SingletonDoublecheck {
     private SingletonDoublecheck() {}
 
     public static  SingletonDoublecheck getInstance() {
-        if (null != singleton) {
+        if (null == singleton) {
             synchronized (SingletonDoublecheck.class) {
-                if (null != singleton) {
+                if (null == singleton) {
                     singleton = new SingletonDoublecheck();
                 }
             }
