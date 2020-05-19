@@ -1,5 +1,8 @@
 package leetcode;
 
+/**
+ * 双指针可以删除一个字母的字符串是不是回文
+ */
 public class Q0680_ValidPalindromeII {
 
     public boolean validPalindrome(String s) {
