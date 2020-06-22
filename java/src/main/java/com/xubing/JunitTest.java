@@ -1,5 +1,7 @@
 package com.xubing;
 
+import net.coobird.thumbnailator.Thumbnailator;
+import net.coobird.thumbnailator.Thumbnails;
 import org.apache.commons.codec.binary.Base32;
 import org.junit.Test;
 
@@ -59,8 +61,7 @@ public class JunitTest {
 
     public static void main(String[] args) throws Exception{
         int a = 500 * 400 * 200 * 300;
-        System.out.println(a);
-
+        Thumbnails.of("").outputQuality(0.1).imageType(1);
     }
 
 }

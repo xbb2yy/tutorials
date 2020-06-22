@@ -18,12 +18,7 @@ import java.util.Scanner;
  */
 public class Main {
     public static void main(String[] args) throws Exception{
-        Document doc = DocumentHelper.parseText("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
-                "<Result>\n" +
-                "\t<Code>1</Code><!-- 0:成功  其他失败 -->\n" +
-                "\t<Message>SUCCESS</Message>\n" +
-                "</Result>\n");
-        System.out.println(doc.getRootElement().elementText("Code"));
+
     }
 
     public static boolean IsInt(String string) {
